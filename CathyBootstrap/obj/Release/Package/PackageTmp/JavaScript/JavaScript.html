@@ -1,0 +1,2474 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript</title>
+    <meta charset="utf-8" />
+    <link href="../Bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Bootstrap-3.3.7/css/cerculean.bootstrap.min.css" rel="stylesheet" />
+    <script src="../Bootstrap-3.3.7/js/jquery-3.1.0.min.js"></script>
+    <script src="../Bootstrap-3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <section id="body" class="container">
+        <div class="page-header" style="margin-top: 2em;">
+            <h3><em>JavaScript</em></h3>
+            <p><em>Fundamentals of JS ...</em></p>
+        </div>
+
+        <h3>Tutorials</h3>
+        <p>
+            My favorite JS tutorial is <a href="https://www.udemy.com/understand-javascript/" target="_blank">JavaScript: Understanding the Weird Parts</a> by Anthony Alicea on udemy. It is a comprehensive tutorial which
+            explains how JavaScript works under the hood. I also related to the Shawn Widlermuth tutorial on Pluralsight called <a href="https://app.pluralsight.com/library/courses/js4cs/table-of-contents" target="_blank">JavaScript for C# Developers</a>.
+            Of course Douglas Crockford always has enlightening things to reveal about JS. Douglas Crockford has a series of lectures on Pluralsight called
+            <a href="https://app.pluralsight.com/library/courses/javascript-good-parts/table-of-contents" target="_blank">JavaScript the Good Parts</a>.
+            Some of items listed in the JavaScript Quirks section below were from these videos. I also have a JavaScript page on my <a href="http://www.kcshadow.net/aspnet/?q=javascript#overlay=%3Fq%3Dnode%252F47%252Fedit" target="_blank">ASP.NET Developer</a> website.
+        </p>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <p>
+                    <img class="img-responsive img-thumbnail pull-left"
+                         width="120px" height="160px" style="margin-right:10px; " src="../Images/effJS.PNG" alt="1" />
+
+                    My favorite JS books are
+                    <a href="http://www.informit.com/store/effective-javascript-68-specific-ways-to-harness-the-9780321812186" target="_blank">Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript</a> by David Herman (2013, Pearson Education).
+
+                    It contains an interesting foreward by Brendan Eich:
+                    <blockquote>
+                        As is well known at this point, I created JavaScript in ten days in May
+                        1995, under duress and conflicting management imperatives—“make
+                        it look like Java,” “make it easy for beginners,” “make it control almost
+                        everything in the Netscape browser.”
+                    </blockquote>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <p>
+                    <img class="img-responsive img-thumbnail pull-left"
+                         width="120px" height="160px" style="margin-right:10px; " src="../Images/jsn.PNG" alt="1" />
+
+                    Another favorite JS book is <a href="https://www.manning.com/books/secrets-of-the-javascript-ninja-second-edition" target="_blank">Secrets of the JavaScript Ninja</a> (2nd Edition Aug. 2016) by John Resig (author of jQuery), Bear Bibeault, and Josip Maras.
+                    As you would expect by a book written by John Resig, it starts with a lot of information about cross browser compatibilities and JavaScript libraries.  But the book continues with JavaScript debugging, testing, and then get into the fundamentals
+                    of functions, events, scoping, invocations, recursion, closures, prototypes, regular expressions, threading, runtime code evaulation, DOM concepts, and cross-browswer strategies.
+                </p>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:10px;">
+            <div class="col-xs-12">
+                <p>
+                    <img class="img-responsive img-thumbnail pull-left"
+                         width="120px" height="160px" style="margin-right:10px; float:left; clear:both;" src="../Images/allonge.PNG" alt="1" />
+
+                    Available free for online reading is
+                    <a href="https://leanpub.com/javascript-allonge" target="_blank">JavaScript Allongé (ES5)</a> by Reg Braithwaite.
+                    This book will made you thirsty for a good cup of coffee. “Café Allongé, also called Espresso Lungo, is a drink midway between an Espresso and Americano in strength.
+                    JavaScript Allongé is a book about programming with functions. It also provides exploratory bits of code that illustrate scoping, combinators, context, state, prototypes, and constructors.
+                    As with most JavaScript books, it provides guidelines for what not to use in JavaScript as well as how to develop a defensive programming style to protect against the many
+                    pitfalls in JavaScript.  JavaScript is a language of extremes, it has the most really bad parts, and the most really good parts, of any mainstream language.
+                </p>
+            </div>
+        </div>
+
+        <h3>JS Playgrounds</h3>
+        <p>Two of my favorite JS playgrounds are:</p>
+        <ul>
+            <li><a href="https://jsfiddle.net/" target="_blank">JS Fiddle</a></li>
+            <li><a href="jsbin.com" target="_blank">JS Bin</a></li>
+        </ul>
+
+
+        <h3>JS Libraries</h3>
+        <p>Some of the popular JS libraries are:</p>
+        <ul>
+            <li><a href="https://jquery.com/" target="_blank">jQuery</a> - DOM, Events, Animation, Ajax</li>
+            <li><a href="http://underscorejs.org/" target="_blank">Underscore.js</a> - Functional Programming Helpers</li>
+            <li><a href="https://lodash.com/" target="_blank">lodash</a> - Utility Library</li>
+            <li><a href="http://momentjs.com/" target="_blank">moment.js</a> - Date and Times</li>
+            <li><a href="https://en.wikipedia.org/wiki/List_of_JavaScript_libraries" target="_blank">List of JavaScript libraries</a> - Wikipedia</li>
+        </ul>
+
+        <h3>Code Analysis Tools</h3>
+        <p>
+            Compiled languages use the compilation phase to enfore many rules concerning the usage of the language.
+            It may seem that JS has few rules which leads to errors being pushed to the execution stage where they
+            fail silently.  However JS does contain a "strict" mode which will enforce more of the ECMA rules and
+            eliminate some the silent errors by changing them to throw errors.  Strict mode can be applied to entire
+            scripts, or just individual functions. This can cause problem when concatenating strict scripts together with
+            non-strict scripts, so it is advised to use strict at a function level.
+        </p>
+
+        <p>
+            Code analysis tools are also available to check JS source code against a configurable set of coding
+            rules. <a href="http//www.jslint.com/" target="_blank">JSLint</a> and
+            <a href="http//www.javascriptlint.com/" target="_blank">JavaScript Lint</a> are two popular code analysis tools
+            used with JS.
+        </p>
+
+        <h3>Strict Mode</h3>
+        <p>
+            By default JS permits a number of coding patterns which are typically prohibited in many languages.  JS also allows
+            many errors to fail silently which prevents interruptions in the browswer but makes finding the errors more difficult.
+            Starting in ECMASript 5 a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank">strict mode</a>
+            was introduced as a way to opt in a restricted variant of JavaScript.  Strict mode is not a subset, but has intentionally different semantics
+            from normal JS and causes difference runtime behaviors. That is, strict mode changes both syntax and runtime behavior.
+            Some of the changes caused by using strict mode include:
+        </p>
+
+        <ol>
+            <li>Eliminates some JS silent errors by changing them to throw errors.</li>
+            <li>Fixes mistakes that make it difficult for JS engines to perform optimizations.</li>
+            <li>Disallows use of undefined variables.  Variable must be declared before they are used.</li>
+            <li>Prevents the accidental defining of global variables.</li>
+            <li>Causes an error when variable names are mistyped.  Normal behavior just creates a new variable.</li>
+            <li>Does not permit writing to read-only properties.</li>
+            <li>Does not permit modifying argument objects inside a function.</li>
+            <li>Does not allow octal notation, so 070 equals a decimal value of 70 instead of 56.</li>
+            <li>Requires that function parameter names be unique.</li>
+            <li>Requires that object property names be unique.</li>
+            <li>Make assignment operations that would silently fail throw an error.</li>
+        </ol>
+
+        <p>
+            Strict mode can be scoped to the entire script or just a function.  Scoping to the function level
+            is recommended to avoid problems when concatenating different scripts as the strict mode can carry
+            over to a script that was not written to support strict mode. While most major browsers support strict mode, do not blindly depend on it since many
+            browsers in the wild have only partial, or not support, for strict mode (e.g. IE below version 10).
+            When using strict mode you need to test the code on both browsers that support strict mode and
+            those browsers which do not support strict mode.  An example usage of strict mode is:
+        </p>
+
+        <!-- HTML generated using hilite.me -->
+        <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <table>
+                <tr>
+                    <td>
+                        <pre style="margin: 0; line-height: 125%">1
+2
+3
+4</pre>
+                    </td>
+                    <td>
+                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">function</span> myFunction() {
+                        <span style="color: #0000FF">&quot;use strict&quot;</span>;
+                        <span style="color: #008800; font-style: italic">// Your code here.</span>
+}
+</pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- ##################### JavaScript Recommendations ##################### -->
+        <h3>JavaScript Recommendations</h3>
+        <p>Below are some common recommendations for working with JavaScript.</p>
+
+        <ol>
+            <li>
+                Always put the starting brace on the same line as the starting keyword (e.g. function, return).
+                This patterns help avoid errors caused by automatic semicolon insertion.
+            </li>
+            <li>
+                Start the name of function constructors with a captial letter, this helps locate
+                occurrences in the code where the "new" keyword is missing which causes an undefined object.
+            </li>
+            <li>
+                Do not use "for-in" when interating through arrays, instead use a standard "for" statement.  The "for-in"
+                will access the properties and methods on the prototype.
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+
+        <h3>JavaScript Data Types</h3>
+        <ol>
+            <li><b>Value Types</b></li>
+            <ul>
+                <li>boolean (primitive)</li>
+                <li>string (primitive)</li>
+                <li>number (primitive)</li>
+            </ul>
+            <li><b>Reference Type</b></li>
+            <ul>
+                <li>object</li>
+            </ul>
+
+            <li><b>Delegate Type</b></li>
+            <ul>
+                <li>function</li>
+            </ul>
+
+            <li><b>Special Type</b></li>
+            <ul>
+                <li>null (primitive)</li>
+                <li>undefined (primitive)</li>
+            </ul>
+        </ol>
+
+        <p>
+            Note that JavaScript also has <b>Number(), String(), and Boolean()</b>
+            which are function constructions used to create objects which wrap the corresponding
+            primitive type. The object contains a number of methods on its prototype and allows for
+            adding additional methods.  However some confusion can occur when using the objects which
+            wrap the primitives as to which type you are working with, and the boxing/unboxing of the
+            primitive values to objects requires additional processing. So some people recommend only
+            using the primitive types when it is absolutely necessary to use the object wrappers.
+        </p>
+
+        <h3>Douglas Crockford Lecture</h3>
+        <ol>
+            <li>
+                Automatic semicolon insertion - can cause functions to returned undefined when starting { is not on same line as return keyword!  Follow the coding
+                pattern of putting the starting brace on the same line as the starting keyword to avoid problems
+                caused by automatic semicolon insertion.<br /><br />
+            </li>
+            <li>Only one number type (which is a 64-bit double precision) which causes problems when dealing with money (i.e. the fractions are approximated values).  The decimal number type would have been a better choice.  Numbers are objects in JS -- which they are not in many languages.  You can add methods to the number object.<br /><br /></li>
+            <li>JS uses a disposable Math object (bad idea borrowed from Java).  Would have been better if they had been methods on the number object.<br /><br /></li>
+            <li>NaN (Not a Number) is a number which is a result of invalid math operations.  Any math operation with Nan as an input will have NaN as an output.  NaN is not equal to NaN. (NaN is not equal to anything).<br /><br /></li>
+            <li>JS has an Infinity number type.  So if x = infinity, then (x === x + 1).  Also Number.MAX_VALUE + 1 === Number.MAX_VALUE<br /><br /></li>
+            <li>+ does both addition and concatenation - which leads to many errors. + operatator is also used to convert a string to a number.  (e.g. num = +str;)  You can force strings to be numbers before adding (e.g. +"3" + (+"4") = 7)<br /><br /></li>
+            <li>parseInt will stop converting once a non-numeric value is detected.  But will not tell you where it stopped, or that it stopped early.  Also problematic if any number being converted starts with leading zeros -- as they are assumed to be in octal (so always use the 10 radix to tell it to use base 10).<br /><br /></li>
+            <li>Be sure not to put "new" in front of string function, that does something completely different.  Douglas does not ever use the "new" keyword anymore.<br /><br /></li>
+            <li>Strings are objects.  They have lots of methods. String has length property indicating how many 16-bit characters are in the string (extended characters are counted as 2).<br /><br /></li>
+            <li>JS does not use "real" arrays, which are contiguous, equal sized area of memory for storing data.  Instead JS arrays are based on objects.  The array indexers are convert to strings, then their hashed value is used to index into the object which is backing the array.  Effecient for sparse arrays (i.e. where most of the cells are empty), but not very efficient in most cases.  One advantage is you do not need to provide a length or type when creating an array (so JS arrays can grow until memory is exhausted).<br /><br /></li>
+            <li>Arrays have a length property which is set to the highest subscript value + 1 (not the number of elments in the array), soyou can append to an array with myArray[myArray.length] = 'a new value';  Should always use the bracket notation with arrays because the dot notation gets confused with numbers.<br /><br /></li>
+            <li>JS has a sort method for arrays, but it does a character sort unless you pass in a comparator function.<br /><br /></li>
+            <li>When you delete an element from an array it leaves a hole in the array.  You have to use the "splice" command to remove the hole.<br /><br /></li>
+            <li>The only two values in JS which are not objects are "null" and "undefined".<br /><br /></li>
+            <li>"undefined" values are used for variables that are not initialized (i.e. they were declared but not initialized).  You can assign undefined to a variable -- but don't as it causes confusion.</li>
+            <li>JS is "weakly-typed" language, but it contains a lot of types.<br /><br /></li>
+            <li>
+                && is the "guard operator".  If first operand is truthy, then result is second operand, else result is first operand (e.g. return a && a.member);  The guard operator is used to avoid null pointer exceptions.
+                var getUsername = function() {
+                return loggedIn && username;
+                }
+                <br /><br />
+            </li>
+            <li>|| is the "default" operator which is the opposite of the guard operator.  It can be used to fill in default values. If first operand is truthy then result is the first operand, else result is second operand.<br /><br /></li>
+            <li>"!"  is the logical not operator.  It can be used to create a boolean -- if used twice it turns a truthy value into true, or a falsely value into false.<br /><br /></li>
+            <li>JS has bitwise operators.  Since JS does not have an int data type, it takes it's 64-bit floating point and converts it into a 32-bit signed integer, performs the bitwise operator, and then converts it back to a 64-bit floating point.<br /><br /></li>
+        </ol>
+
+
+        <h3>JavaScript vs C# Overview</h3>
+        <p>Below is an overview of the differences between JavaScript and C#</p>
+        <div class="row" style="margin-top: 15px; margin-bottom: 10px">
+            <div class="col-sm-6 col-sm-offset-2">
+                <table class="table">
+                    <tr>
+                        <th style="width:200px;">C#</th>
+                        <th>JavaScript</th>
+                    </tr>
+                    <tr>
+                        <td>Strongly Typed</td>
+                        <td>Loosely Typed</td>
+                    </tr>
+                    <tr>
+                        <td>Static</td>
+                        <td>Dynamic</td>
+                    </tr>
+                    <tr>
+                        <td>Classical Inheritance</td>
+                        <td>Prototypal Inheritance</td>
+                    </tr>
+                    <tr>
+                        <td>Classes</td>
+                        <td>Functions</td>
+                    </tr>
+                    <tr>
+                        <td>Constructors</td>
+                        <td>Functions</td>
+                    </tr>
+                    <tr>
+                        <td>Methods</td>
+                        <td>Functions</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+
+        <h3>JavaScript vs C# Comparisons</h3>
+        <p>Below are comparisons between JavaScript and C#</p>
+
+        <ol>
+            <li>
+                Similar syntax, eg. {} for blocks of code.  == and === for equality.  The same syntax for single line
+                and multi-line comments.  But don't let that fool you.  While they look similar, the two languages
+                behave very differently in a number of ways.<br /><br />
+            </li>
+            <li>
+                C# is compiled into Intermediate Code which runs on the .NET Common Language Runtime (CLR). As C#
+                is a part of .NET it shares a common type system with the other .NET languages which make them easily interoperable.
+                JS runs on various scripting engines which vary in the commands they use.  This was most troublesome in
+                the older browsers, but is improving as browsers evolve.
+                <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank">ECMAScript - Standard ECMA-262</a>
+                is the standard for JS (technically called ECMAScript), but it is followed in varying degrees by different vendors of JavaScript Engines
+                (Chrome=V8, IE=Chakra, Firefox=SpiderMonkey). <a href="http://www.quirksmode.org/" target="_blank">QuirksMode.org</a> list
+                the version differences in various JS engines incorporated into the different browsers. There is also an ECMA 6 browser compatability chart
+                on  <a href="http://kangax.github.io/compat-table/es6/" target="_blank">kangax.github.io<br /><br /></a>
+            </li>
+            <li>
+                While the "var" keyword creates a strongly typed varible in C#, however it creates a loosely type variable in JavaScript.
+                In JS the variable type can implicitly change during the program execution, while this does not happen in C#.
+                When variables are declared in JS without the VAR keyword, they are global variables ... even when defined
+                inside a function.  In later versions of C# the capability to create dynamic types has been added with the
+                "dynamic" keyword.  However this limits the which variables can be made to use dynamic typing. So if you
+                absolutely need dynamic typing in C#, it is available  ... and then C# also supports anonymous objects.<br /><br />
+            </li>
+            <li>
+                In C# variables must be declared before they are used.  Not so in JS.  When a variable is used before it is declared
+                in JS, it contains the value of "undefined".<br /><br />
+            </li>
+            <li>
+                C# has namespaces which prevent the collision of variable names.  In JS all the variables defined at the root of
+                the file are within the Global scope.  To protect the variables in a JS file from leaking out into the global scope
+                requires the creation of an Immediately Invoked Function Expression (IIFE) to wrap the JS code.<br /><br />
+            </li>
+            <li>
+                JS has only one number type called "number". C# has number types with different degrees of precision "float"= 7 digits, "double" = 15-16 digits, and "decimal" = 28-29 digits.
+                Decimals are used in financial calculations to minimize rounding errors, but they are considerably slower than floats/doubles. For graphics applications where memory and performance
+                are both critical, floats are typically used. C# also different types of integer values with
+                different capacities.  In C# a "byte" uses 8 bits, ashort" uses 16 bits, an "int" uses 32 bits, and a "long" uses 64 bits.  C# also has corresponding unsigned version of the integer types.  For example
+                a "uint" can contain the values from 0 to 65535;<br />
+                JS uses the IEEE-754 number type which tends to be prone to rounding errors, which suprises me because of it's huge size.
+                When I run "alert([Number.MAX_VALUE, Number.MIN_VALUE]);" on my current Chrome, FF, and IE browsers, I get:<br /><br />
+                1.7976931348623157e+308<br />
+                5e-324<br />
+                <br />
+                Also in JS any number which starts with a 0 is in Octal format (e.g. 070 is the value 56 in Decimal). The Ox prefix is used for Hexidecimal format.
+                In JS 1/0 returns "infinity". 0/0 returns "NaN", while typeof(0/0) returns "number". Also "Nan == Nan" returns false. Note: isNaN(NaN) returns true.
+                Aside: There is an interesting chapter on <a href="" target="_blank">Basic JavaScript and Graphics</a> on GitBook.<br /><br />
+            </li>
+            <li>
+                In both JS and C# strings are immutable.  In JS you can use either single or double quotes for strings.  But in C# single quotes are used
+                for characters, while double quotes are used for strings.  The length function in C# returns the number of characters in a string, while the
+                JS length function returns the number of bytes in a string, which can be confusing when dealing with double-byte character sets like Unicode UTF-16.<br /><br />
+            </li>
+            <li>
+                C# has numerous types of collections which are all abstractions of arrays.  C# typically used the add and remove methods of working with collections.
+                In JS you do not have the collection abstractions and work only with the arrays directly. However there are JS libraries, such as <a href="http://www.collectionsjs.com/">collection.js</a> which add in collections.
+                You dealing directly with arrays in JS by using:<br /><br />
+                push - add to end of array<br />
+                pop - remove from end of array<br />
+                shift - remove from beginning of array<br />
+                unshift - add to beginning of array.<br /><br />
+                Other JS functions for working with arrays include: indexOf, lastIndexOf, slice, splice, and concat.<br /><br />
+            </li>
+
+
+            <li>
+                In JS functions are themselves a data type which allows for the passing of functions.  C# has delegates which are method pointers which
+                serve in a similar manner.  Passing of functions is used extensively in JS such as when using callback functions.  Later versions of C# use
+                anonymous delegates in Lambda expressions to provide a versatile and concise syntax for defining methods inline at the point of their use.
+                C# also has the newer Func&lt;&gt; and Action&lt;&gt; as generic delegate types which provides a more concise way of defining delegates.
+                C# also supports Function Expression for creating predicates which can be used in LINQ.<br /><br />
+            </li>
+
+            <li>
+                C# has method overloading and optional parameters, but these do not exist in JS.  For example, the following JS code will return the string
+                "second function":
+                <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                    <table>
+                        <tr>
+                            <td>
+                                <pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7</pre>
+                            </td>
+                            <td>
+                                <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">function</span> foo(a) {
+console.log(<span style="color: #0000FF">&quot;first function&quot;</span>);
+}
+<span style="color: #000080; font-weight: bold">function</span> foo(a, b) {
+console.log(<span style="color: #0000FF">&quot;second function&quot;</span>);
+}
+foo(<span style="color: #0000FF">1</span>);
+</pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <br />
+                The latest foo function definition overwrites the previous version instead of creating an overload.  The parameters
+                which are not passed in assume the type of undefined. Inside the JS function, "arguments.length" can be used to
+                determine the number of parameters passed in. So JS allows more or less arguments to be passed to a function than
+                is defined in a function.  In fact you can pass in arguments to a JS function that does not have any arguments defined.
+                And of course all the parameters passed into a JS function are untyped.<br /><br />
+            </li>
+
+            <li>
+                All JS functions return a value.  If no value is explicitly assigned as the function's return value, the function returns
+                "undefined". In C# you indicate it is going to return a value by defining the declaring the type of the return value.  If multiple
+                values need to be returned, Tuples can be use.  However in JS all functions return a value and there is no declaration for the
+                return value on the function.  Also JS can return different types from the same function based on the logic inside the function.<br /><br />
+            </li>
+
+            <li>
+                JS Functions can be assigned to variables in a similar way that C# creates anonymous delegates.<br /><br />
+            </li>
+
+
+            <li>
+                In C# the "this" keyword represents the instance of the class you are working with.  JS does not
+                have the concept of classes, so the "this" keyword in JS indicates the owner of the function.  For example
+                in a browser when a function is create in the global scope, the "this" keyword points to the Window object.
+                The bind() function can be used to change the owner of a function.<br /><br />
+            </li>
+
+            <li>
+                In C# code blocks, defined with {}, create a scope for the visibility of variables.
+                In JS code blocks do not define variable scope.  In JS the only thing which defines variable
+                scope is functions.  That is why it is common to wrap entire scripts inside a function (i.e.
+                an Anonymous Self-Executing Function) to prevent the variables from polluting the global scope.
+                This is not only important to resolve variable name conflicts but is also needed for functions
+                as function redeclarations in JS do not cause errors.  So when two JavaScript libraries that use
+                the same function name are included in an application, the last function definition overwrites
+                the first function definition. Anonymous Self-Executing Functions are also called Immediately-Invoked
+                Function Expressions (IIFE).  The typical declaration for an IIFE is:
+                <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                    <table>
+                        <tr>
+                            <td>
+                                <pre style="margin: 0; line-height: 125%">1
+2
+3</pre>
+                            </td>
+                            <td>
+                                <pre style="margin: 0; line-height: 125%">(<span style="color: #000080; font-weight: bold">function</span> () {
+                                <span style="color: #008800; font-style: italic">// Code goes here</span>
+}());
+</pre>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br /><br />
+            </li>
+
+            <li>
+                The structure of the data passed into a JS API tends to be more complex than the data
+                passed to a .NET api.  In .NET an object would be instantiated, have its properties set, and then
+                be passed into an API.  In JS the data is not stored in an object to be passed to the API, but
+                is just specified in the API call.  If the JS API does not have all the parameter data passed
+                in, it will recognize the parameter data is undefined and then use default values for the data,
+                or perhaps just keep the data as undefined and silently fail (my bad). <br /><br />
+            </li>
+        </ol>
+
+
+
+        <br />
+        <h3>Tony Alicea Lecture</h3>
+        <ol>
+            <li>
+                <h5>Execution Contexts and Lexical Environments</h5>
+                <ol type="a">
+                    <li>
+                        <b>Lexical Environment</b> - where something sits physically in the code you write.
+                        Exists in programming languages in which where you write something matters.
+                        JS is one of those languages.  e.g. A variable sits "lexically" inside a function.
+                        <br /><br />
+                    </li>
+                    <li>
+                        <b>Execution Context</b> - a wrapper to help manage the code that is running. There can
+                        be lots of lexical environments, which are managed by the execution contexts.  The execution
+                        context contains your code, but can also contain things beyond what you've written in your code.
+                        <br /><br />
+                    </li>
+                    <li><b>Object</b> - in JS, an object is simple a collection of Name/Value pairs.<br /><br /></li>
+                    <li>
+                        There can be several execution contexts when a JS program runs. The base execution context
+                        which wraps you code as it is run is the Global execution context (i.e. accessibile to everything in your program). The global
+                        execution context creates three things:
+                        <ul>
+                            <li>
+                                <b>Global Object</b> - there is always a global object when running JS.  Inside a browser the global object
+                                is the <em>Window</em> object. In JS Global = "Not inside a function".
+                            </li>
+                            <li><b>'this'</b>variable</li>
+                            <li>
+                                if not at the global level, then there will be <b>
+                                    a link to the <em>Outer Environment</em>.
+                                </b> (At the global level the
+                                link to the outer environment is null.)
+                            </li>
+                        </ul><br />
+                    </li>
+                    <li>
+                        JS has a behavior called <b>"Varible Hosting"</b> which is the result of execution context being created in
+                        two phases: the <b>creation phase</b> and <b>execution phase</b>.  The creation phase sets up the memory space for variables and functions. It
+                        allocates memory for all the variables (but does not initialize them!)
+                        and it loads all the functions "as is" into the memory.  During the creation phase,
+                        all the variables contain the special value <b><em>undefined</em></b> which means they have been declared but not initialized.
+                        Then during the second phase, the execution phase, the code is executed line-by-line and
+                        as the variables are encountered they will be assigned values.<br /><br />
+                    </li>
+                    <li>
+                        Instead of relying on hosting, it is always better to declare all variables and
+                        all nested functions at the top of the function (Note: JS has function-level scoping, not
+                        block-level scoping.) <br /><br />
+                    </li>
+                    <li>
+                        Note: <b>"undefined"</b> and <b>"not defined"</b> are not the same thing.  "undefined" is a special value
+                        in JS which means a memory space has been allocated in memory for the variable, but no
+                        value was put the variable's memory space.  "not defined" means the memory space was
+                        never created for the variable.  Also "null" means the variables memory space exists,
+                        but there is a special value (null) in the memory space to represent the absence of a value.
+                        It is best to allow the JS engine to set variables without values to "undefined", and
+                        for programmers to set variables to "null" when they wish to designate variables do
+                        not have values.  So "undefined" should mean: "I never set that value". <br /><br />
+                    </li>
+                    <li>JS is single threaded synchronous in its execution.<br /><br /></li>
+                    <li>
+                        Each time a function is invocated, a new execution context is created.  The new
+                        execution context is put on top of a stack.  When the function finished executing,
+                        then its  execution context is removed from the top of the stack.<br /><br />
+                    </li>
+                    <li>
+                        The event <b>queue</b> is not processed until the execution <b>stack</b> is empty. JavaScript does not
+                        process code asynchronously, but it does capture events and put them in the event queue.  Only when
+                        the execution stack is empty, will the JS engines look for the next item in the event queue, and
+                        run anything which might be specified in the event item.  If the execution stack and event queue
+                        are both empty, JS will continually check the event queue (i.e. the event loop) for work to do.
+                        <br /><br />
+                    </li>
+                    <li>
+                        Setting default value with ||. It returns the first value which can be coerced to true.
+                        So the statement undefined || 'hello' returns 'hello' (i.e. Boolean('Hello') returns true).
+                        The statement 'hi' || 'hello' returns 'hi'. [Just be careful about passing in zero] <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">function</span> salutation(name) {
+	name = name || <span style="color: #0000FF">&#39;Kevin&#39;</span>;
+	console.log(<span style="color: #0000FF">&#39;Dear &#39;</span> + name);
+}
+salutation();
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br />
+                    </li>
+                </ol>
+            </li>
+            <li>
+
+                <h5>Objects and Functions</h5>
+                <ol type="a">
+                    <li>
+                        <b>Objects</b> - in JS are collections of name/value pairs.  The name/value pairs
+                        can be collections of other name/value pairs. Objects can have properties (a primitive or another object) and functions.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">var</span> customer = <span style="color: #000080; font-weight: bold">new</span> Object();
+customer[<span style="color: #0000FF">&quot;firstname&quot;</span>] = <span style="color: #0000FF">&quot;Kevin&quot;</span>;
+customer[<span style="color: #0000FF">&quot;lastname&quot;</span>] = <span style="color: #0000FF">&quot;Harris&quot;</span>;
+console.log(customer);
+console.log(customer[<span style="color: #0000FF">&quot;firstname&quot;</span>]);
+console.log(customer.firstname); <span style="color: #008800; font-style: italic">// Dot Operator is preferred method</span>
+<span style="color: #008800; font-style: italic">// Create another object inside object</span>
+customer.address = <span style="color: #000080; font-weight: bold">new</span> Object();
+customer.address.street = <span style="color: #0000FF">&quot;101 Main St.&quot;</span>;
+customer.address.city = <span style="color: #0000FF">&quot;Champaign&quot;</span>;
+console.log(customer[<span style="color: #0000FF">&quot;address&quot;</span>][<span style="color: #0000FF">&quot;street&quot;</span>]);
+console.log(customer.address.street);
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <br />
+                    </li>
+                    <li>
+                        <b>Object Literals {}</b> - a quicker way of defining objects using name/value pairs<br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">var</span> customer = {
+	firstname: <span style="color: #0000FF">&quot;Kevin&quot;</span>,
+	lastname: <span style="color: #0000FF">&quot;Harris&quot;</span>,
+	address:  {
+		street: <span style="color: #0000FF">&quot;101 Main St.&quot;</span>,
+		city: <span style="color: #0000FF">&quot;Champaign&quot;</span>		
+		}
+};
+console.log(customer[<span style="color: #0000FF">&quot;address&quot;</span>][<span style="color: #0000FF">&quot;street&quot;</span>]);
+console.log(customer.address.street);
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+
+                        <br /><br />
+                    </li>
+                    <li>
+                        <b>JavaScript does not contain namespaces</b>, but they can be faked by using objects to create
+                        containers to avoid name collisions on variables and functions:<br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">var</span> english = {
+	greeting: <span style="color: #0000FF">&quot;Hello&quot;</span>
+}
+<span style="color: #000080; font-weight: bold">var</span> spanish = {
+	greeting: <span style="color: #0000FF">&quot;Hola&quot;</span>
+}
+console.log(english.greeting);
+console.log(spanish.greeting);
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <br /><br />
+                    </li>
+                    <li>
+                        <b>JASON (JavaScript Object Notation)</b> was inspired by object literal syntax in JS. JASON
+                        looks similar to object literal syntax, but is not quite the same. In JASON, property names
+                        must be surrounded by quotes, while in object literal syntax, property names can be surrounded by quotes
+                        but it is not required.  Making JASON a subset of the object literal syntax.<br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%">1
+2
+3
+4</pre>
+                                    </td>
+                                    <td>
+<pre style="margin: 0; line-height: 125%">{
+                                        <span style="color: #0000FF">&quot;firstname&quot;</span>: <span style="color: #0000FF">&quot;Kevin&quot;</span>
+                                        <span style="color: #0000FF">&quot;isAdmin&quot;</span>: <span style="color: #000080; font-weight: bold">true</span>
+}
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+                    <li>
+                        JavaScript contains the <b>JSON.stringify()</b> command which will convert an object into JSON.  Also
+                        the <b>JSON.parse() will convert a JSON string into a JS Object.</b><br /><br />
+                    </li>
+                    <li>
+                        In JavaScript, <b>functions are objects</b>. JS has first-class functions (i.e. everything you can do with
+                        other types, you can do with functions ... assign functions to variables, pass functions around,
+                        create functions dynamically). Since functions are objects you attach properties to them.  But functions
+                        are a special type of object which has additional features.  Functions can be named, or created
+                        without a name (anonymous functions). Function have a special "CODE" property which contains
+                        the lines of code you create.  So a function is a property and the code you write is
+                        one of those properties, the CODE property.  The CODE property has the ability to be
+                        invocable (). Below is a function, with a property attached.<br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">function</span> bark() {
+	console.log(<span style="color: #0000FF">&quot;arf arf&quot;</span>);
+}
+bark.volume = <span style="color: #0000FF">&quot;very loud&quot;</span>;
+console.log(bark);
+console.log(bark.volume);
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+                    <li>
+                        An <b>Expression</b> is a unit of code which results in a value.  <b>Statements</b> perform some work, but
+                        expressions return a value ... and the value does not have to be saved in a variable.  For example in an "If statement"
+                        the portion inside parenthesis is an expression (it just returns a value). Is JS there are both "Function Statements" and
+                        "Function Expressions".<br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Function Statement - Does Work</span>
+<span style="color: #000080; font-weight: bold">function</span> bark() {
+	console.log(<span style="color: #0000FF">&quot;arf arf&quot;</span>);
+}
+<span style="color: #008800; font-style: italic">// Function Expression - Returns a function object</span>
+<span style="color: #000080; font-weight: bold">var</span> anonymousBark = <span style="color: #000080; font-weight: bold">function</span>() {
+	console.log(<span style="color: #0000FF">&quot;yip yip&quot;</span>);
+}
+bark();
+anonymousBark();
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+                    <li>
+                        The <b>"this" keyword</b> is used to reference an object, but it doesn't work they way many
+                        people would expect.  Inside a function, the "this" keyword refers to the global object.
+                        Inside a function, which is inside an object, the "this" keyword refers to the containing
+                        object.  But if the function which is inside the object, contains a nested function,
+                        then the "this" keyword inside the nested function refers to the global object.  Many
+                        people believe this is wrong.  A common pattern is to set a variable called "self" or
+                        "that" inside the first function and then use the variable inside the nested function
+                        to refer to the containing object.<br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Using &quot;self&quot; to refer to containing object</span>
+<span style="color: #000080; font-weight: bold">var</span> a = {
+	name: <span style="color: #0000FF">&quot;A object&quot;</span>,
+	log: <span style="color: #000080; font-weight: bold">function</span> () {
+                                        <span style="color: #000080; font-weight: bold">var</span> self = <span style="color: #000080; font-weight: bold">this</span>;
+		
+                                        <span style="color: #008800; font-style: italic">// First update</span>
+		self.name = <span style="color: #0000FF">&quot;A object updated&quot;</span>;
+		console.log(self);
+		
+                                        <span style="color: #000080; font-weight: bold">var</span> setname = <span style="color: #000080; font-weight: bold">function</span>(newname) {
+			self.name = newname;
+		}
+		
+		setname(<span style="color: #0000FF">&quot;A object updated again&quot;</span>);
+		console.log(self);
+	}
+}
+a.log();
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+                    <li>
+                        <b>JavaScript Arrays</b> are different than those in strongly typed languages.  Typically in strongly typed languages
+                        an array is a contiguous area in memory with a finite number of equal size slots which
+                        all hold the same data type.  This make accessing them very fast.  In JS, since it is weakly typed,
+                        an "array" is actually an object, and as such can hold a combination of
+                        different types and can grow until memory is exhausted.  JS arrays have good performance
+                        for sparsely populuated arrays, but poor performance for densely populated arrrays
+                        (which is more common).<br /><br />
+                    </li>
+                    <li>
+                        <b>DANGER - Automatic Semicolon Insertion</b> - Semicolons are optional in JS because it contains a
+                        feature to automatically insert missing semicolons.  This causes hard to find bugs by inserting
+                        semicolons in code in places that change the intent of the logic ... such as after the "return" statement
+                        and before its opening brace.  A pattern to protect against this in JS is to always put the opening
+                        brace on the same line as the statement.  Also always insert your own semicolons!
+                        <br /><br />
+                        The following code shows this danger.  The GetFirstName function returns undefined, while the
+                        getLastName function returns the lastname object.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">function</span> getFirstName() {
+                                        <span style="color: #000080; font-weight: bold">return</span>
+	{
+		firstname: <span style="color: #0000FF">&#39;Kevin&#39;</span>
+	}
+}
+<span style="color: #000080; font-weight: bold">function</span> getLastName() {
+                                        <span style="color: #000080; font-weight: bold">return</span> {
+		lastname: <span style="color: #0000FF">&#39;Harris&#39;</span>
+	}
+}
+console.log(getFirstName());
+console.log(getLastName());
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+                    <li>
+                        <b>Immediately Invoked Function Expressions (IIFE)</b> - are commonly used to isolate code and
+                        prevent it from colliding with code in the global object. Most common JS libraries use
+                        an IIFE for this purpose.  An IIFE is created by wrapping a function statement in parenthesis,
+                        and then immediately invoking it by following it with a set of parenthesis. Note this isolation works
+                        because JS using function-level scoping, instead of block-level scoping (However ES6+ is providing
+                        block-level scoping capabilities). The following example shows a function statement, and function expression,
+                        and an IIFE.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Function Statement</span>
+<span style="color: #000080; font-weight: bold">function</span> logName(name) {
+	console.log(name);
+}
+logName(<span style="color: #0000FF">&#39;Kevin&#39;</span>);
+                                        <br /><br />
+<span style="color: #008800; font-style: italic">// Function Expression</span>
+<span style="color: #000080; font-weight: bold">var</span> logNameFunc = <span style="color: #000080; font-weight: bold">function</span>(name) {
+	console.log(name);
+}
+logNameFunc(<span style="color: #0000FF">&#39;Kevin&#39;</span>);
+                                        <br /><br />
+<span style="color: #008800; font-style: italic">// Immediately Invoked Function Expression</span>
+(<span style="color: #000080; font-weight: bold">function</span>(name) {
+	console.log(name);
+}(<span style="color: #0000FF">&#39;Kevin&#39;</span>));
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+
+                    <li>
+                        <b>Closures</b> - A vital topic which can be difficult to understand.
+
+                        <br /><br />
+                        This example creates a function (statement) which returns a function (expression).  Notice the syntax
+                        of how the returned function is invoked.
+                        <br /><br />
+                        <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// function statement</span>
+<span style="color: #000080; font-weight: bold">function</span> greet(whattosay) {
+	
+                                        <span style="color: #008800; font-style: italic">// returning a function expression</span>
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">function</span>(name) {
+		console.log(whattosay + <span style="color: #0000FF">&#39; &#39;</span> + name);
+	}
+}
+greet(<span style="color: #0000FF">&#39;Hello&#39;</span>)(<span style="color: #0000FF">&#39;Kevin&#39;</span>);
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <br /><br />
+                        If the returned function is saved as a variable, and then invoked ... the returned function still knows the value
+                        of the 'whattosay' variable which was passed into the outer function  ... even though the outer function
+                        is no longer in the execution context.  This is possible because of closures.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%">1
+2
+3</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">//greet(&#39;Hello&#39;)(&#39;Kevin&#39;);</span>
+<span style="color: #000080; font-weight: bold">var</span> sayHello = greet(<span style="color: #0000FF">&#39;Hello&#39;</span>);
+sayHello(<span style="color: #0000FF">&#39;Kevin&#39;</span>);
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                        Even though the execution context of the outer function is gone (it has been popped off the execution stack), the variables
+                        associated with the outer function still exist in memory, and those variables are still part of the scope chain.
+                        <br /><br />
+                        So even though the outer function finishes (and is removed from the execution stack), any function created
+                        inside the outer function will still have references to the outer function's variables (memory space).
+                        This outer-function variables are sometimes referred to as "free variables".
+                        <br /><br />
+                        Closures are not something you tell the program to do.  Closures are a feature of the JavaScript language ... they
+                        just happens. Closures are relied on frequently in JS, such as in call backs.  The programmer does
+                        not "create a closure", the JS engine creates the closure.  Programmers just "take advantage" of the
+                        closure.  When describing closure, it is said that the inner function has 'closed in its outer variables'.
+                        <br /><br />
+                    </li>
+
+                    <li>
+                        <b>Classical Example of Closures</b> - below is the classical example illustrating how closures work
+                        in JS.  Three functions are created inside another function and then each of the three functions
+                        are executed in the global context.  Key is the understanding that the "console.log(i)" statement inside
+                        the three functions is NOT executed until it is in the global context ... at which time the "i" variable
+                        does not exist, so it goes down the scope chain to find "i" in the memory space of the outer function.
+                        At that point in time the value of "i" is 3.  So the three function calls all log the same value of 3.
+                        <br /><br />
+                        The analogy  to this closure is asking three children how old their father is.  They will not
+                        tell you how old their father was when they were born.  They will all three give the same answer
+                        of how old their father is now.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Classical Closure Example</span>
+<span style="color: #000080; font-weight: bold">function</span> buildFunctions() {
+	
+                                        <span style="color: #000080; font-weight: bold">var</span> arr = [];
+	
+                                        <span style="color: #000080; font-weight: bold">for</span> (<span style="color: #000080; font-weight: bold">var</span> i=<span style="color: #0000FF">0</span>; i&lt;<span style="color: #0000FF">3</span>; i++) {
+		arr.push(
+                                        <span style="color: #000080; font-weight: bold">function</span>(){
+				console.log(i);
+			}
+		)
+	}
+	
+                                        <span style="color: #000080; font-weight: bold">return</span> arr;
+}
+<span style="color: #000080; font-weight: bold">var</span> fs = buildFunctions();
+fs[<span style="color: #0000FF">0</span>]();
+fs[<span style="color: #0000FF">1</span>]();
+fs[<span style="color: #0000FF">2</span>]();
+                                        <br />
+<span style="color: #008800; font-style: italic">// Output is: 3,3,3</span>
+                                        <br />
+<span style="color: #008800; font-style: italic">// The console.log is not executed inside the for loop.  It is</span>
+<span style="color: #008800; font-style: italic">// created in the for loop, but executed in the global context.</span>
+<span style="color: #008800; font-style: italic">// In the global context the variable &quot;i&quot; does not exist.</span>
+<span style="color: #008800; font-style: italic">// So it goes up the scope chain to find the value of &quot;i&quot; in the outer-function,</span>
+<span style="color: #008800; font-style: italic">// which has a value of 3.  So the output is: 3,3,3</span>
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                        Note: If you wanted the inner functions to log the value of i at the time the function was created (i.e. 0, 1, 2),
+                        you could insert a "let j = i;" statement inside the for loop, before the function creation, and log the value of "j" in the
+                        created function.  The "let"
+                        statement (new in ES6 causes the variable to be scoped to the block instead of being scoped to the function).
+                        Alternatively in ES5, you could change the inner function to an IIFE, pass in the "i" variable to
+                        be the value "j" inside the function ("j" gets logged in the function).  The IFFE causes
+                        the inner functions to be executed inside the for loop, which then has a result of returning a function
+                        that logs "j" which was passed into the function ... so the executing function does not have to go
+                        to the outer context to find the variable value.
+                        <br /><br />
+                    </li>
+                    <li>
+                        <b>Closure - Function Factories.</b> The following code is an example of a function factory which uses closure
+                        to produce different execution results from the exact same code.  When the "enFunction" and "esFunction" is created, <b>
+                            they contain the exact same code.
+                        </b> However when they are run, <b>they produce different results</b> ... because they have different
+                        outer reference environments.  That is, when the "enFunction" is created, the "lang" variable is set to "en" and
+                        when the "esFunction" is created, the "lang" variable is set to "es".  So, when the "enFunction" is run, it
+                        references the "lang='en'" because that is the <b>value of the variable when the function was created</b>.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Function Factory</span>
+<span style="color: #000080; font-weight: bold">function</span> makeGreeting(lang) {
+	
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">function</span>(fname, lname) {		
+                                        <span style="color: #000080; font-weight: bold">if</span> (lang.toUpperCase() === <span style="color: #0000FF">&#39;EN&#39;</span>) {
+			console.log(<span style="color: #0000FF">&#39;Hello &#39;</span>  + fname + <span style="color: #0000FF">&#39; &#39;</span> + lname);
+		}
+                                        <span style="color: #000080; font-weight: bold">if</span> (lang.toUpperCase() === <span style="color: #0000FF">&#39;ES&#39;</span>) {
+			console.log(<span style="color: #0000FF">&#39;Hola &#39;</span>  + fname + <span style="color: #0000FF">&#39; &#39;</span> + lname);
+		}		
+	}
+}
+<br />
+<span style="color: #000080; font-weight: bold">var</span> enFunction = makeGreeting(<span style="color: #0000FF">&#39;en&#39;</span>);
+<span style="color: #000080; font-weight: bold">var</span> esFunction = makeGreeting(<span style="color: #0000FF">&#39;es&#39;</span>);
+<br />
+<span style="color: #008800; font-style: italic">// enFunction and esFunction are the exact same code</span>
+console.log(enFunction);
+console.log(esFunction);
+<br />
+<span style="color: #008800; font-style: italic">// but they return different results because their</span>
+<span style="color: #008800; font-style: italic">// outer reference environments are different</span>
+enFunction(<span style="color: #0000FF">&#39;Kevin&#39;</span>, <span style="color: #0000FF">&#39;Harris&#39;</span>);
+esFunction(<span style="color: #0000FF">&#39;Kevin&#39;</span>, <span style="color: #0000FF">&#39;Harris&#39;</span>);
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+
+
+                    <li>
+                        <b>Closures and Callbacks</b> Common functions, such as JavaScript's setTimeout, and jQuery's event functions use closures
+                        and callbacks.  The callback function is a passed function which will run at a later time, after something else
+                        has finished.<br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Function accepting a callback function</span>
+<span style="color: #000080; font-weight: bold">function</span> notifyWhenDone(theCallbackFunction) {
+                                        <span style="color: #000080; font-weight: bold">var</span> a = <span style="color: #0000FF">1</span>;
+                                        <span style="color: #000080; font-weight: bold">var</span> b = <span style="color: #0000FF">2</span>;
+                                        <span style="color: #000080; font-weight: bold">var</span> c = a + b;
+	
+	theCallbackFunction();
+}
+                                        <br />
+<span style="color: #008800; font-style: italic">// Pass anonymous function as callback</span>
+notifyWhenDone(<span style="color: #000080; font-weight: bold">function</span>() {
+	console.log(<span style="color: #0000FF">&#39;The addition finished.&#39;</span>);
+})
+                                        <br />
+<span style="color: #008800; font-style: italic">// Pass named function as callback</span>
+<span style="color: #000080; font-weight: bold">function</span> sayDone() {
+	console.log(<span style="color: #0000FF">&#39;I am done.&#39;</span>);
+}
+notifyWhenDone(sayDone);
+                                        <br />
+<span style="color: #008800; font-style: italic">// IFFE using closure and callback</span>
+(<span style="color: #000080; font-weight: bold">function</span> delayedGreeting() {
+                                        <span style="color: #000080; font-weight: bold">var</span> greeting = <span style="color: #0000FF">&#39;Hello Kevin&#39;</span>;
+	
+	setTimeout(<span style="color: #000080; font-weight: bold">function</span>() {
+		console.log(greeting);
+	}, <span style="color: #0000FF">5000</span>);
+})();
+	
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+
+                    <li>
+                        <b>call(), apply(), bind()</b> - allows the programmer to set what the "this" variable points to. Reminder:
+                        By default, "this" inside a function points the windows global object. And when "this" is inside a function (aka method), which
+                        is inside an object, it points to the object. But when "this" is inside a function, which is inside a function, which is inside
+                        an object it points to the windows global object (not the containing object).  call(), apply(), and bind() allows you to
+                        specify what the "this" object points to.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// points to window global object</span>
+console.log(<span style="color: #000080; font-weight: bold">this</span>);
+                                        <br />
+<span style="color: #008800; font-style: italic">// points to window global object</span>
+<span style="color: #000080; font-weight: bold">function</span> myFunction() {
+	console.log(<span style="color: #000080; font-weight: bold">this</span>);
+}
+myFunction();
+                                        <br />
+<span style="color: #008800; font-style: italic">// points to window global object</span>
+<span style="color: #000080; font-weight: bold">function</span> myFunction2() {
+                                        <span style="color: #000080; font-weight: bold">function</span> myFunction3() {
+		console.log(<span style="color: #000080; font-weight: bold">this</span>);
+	}
+	myFunction3();
+}
+myFunction2();
+                                        <br />
+<span style="color: #008800; font-style: italic">// method inside object =&gt; points to my object (not global object)</span>
+<span style="color: #000080; font-weight: bold">var</span> myObj = {
+	name: <span style="color: #0000FF">&quot;My Object&quot;</span>,
+	myFunc : <span style="color: #000080; font-weight: bold">function</span> () {
+		console.log(<span style="color: #000080; font-weight: bold">this</span>);
+	}
+}
+myObj.myFunc();
+                                        <br />
+<span style="color: #008800; font-style: italic">// function inside method inside object =&gt; points window global object (not my object)!</span>
+<span style="color: #000080; font-weight: bold">var</span> myObj = {
+	name: <span style="color: #0000FF">&quot;My Object&quot;</span>,
+	myFunc : <span style="color: #000080; font-weight: bold">function</span> () {
+                                        <span style="color: #000080; font-weight: bold">function</span> myFunc4() {
+			console.log(<span style="color: #000080; font-weight: bold">this</span>);
+		}
+		myFunc4();
+	}
+}
+myObj.myFunc();
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <br /><br />
+                        A function is an object in JS.  All objects in JS have access to certain functions, such as
+                        call(), apply(), and bind().
+                        <ul>
+                            <li><b>bind()</b> - creates a copy of the function and allows specification of "this" variable.</li>
+                            <li><b>call()</b> - uses original function and allows specification of "this" variable.</li>
+                            <li><b>apply()</b> - similar to call(), except parameters are passed in as an array.</li>
+                        </ul>
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// object with a function (method)</span>
+<span style="color: #000080; font-weight: bold">var</span> person = {
+	firstName: <span style="color: #0000FF">&#39;Kevin&#39;</span>,
+	lastName: <span style="color: #0000FF">&#39;Harris&#39;</span>,
+	fullName: <span style="color: #000080; font-weight: bold">function</span>() {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">this</span>.firstName + <span style="color: #0000FF">&#39; &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.lastName;
+	}
+}
+<br />
+<span style="color: #008800; font-style: italic">// calling the fullName method from a function</span>
+<span style="color: #000080; font-weight: bold">var</span> logName = <span style="color: #000080; font-weight: bold">function</span>(l1, l2) {
+	console.log(<span style="color: #0000FF">&#39;Logged as: &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.fullName());
+}
+                                        <br />
+<span style="color: #008800; font-style: italic">// Fails because &quot;this&quot; points to global object (fullName is undefined)</span>
+<span style="color: #008800; font-style: italic">//logName();</span>
+                                        <br />
+<span style="color: #008800; font-style: italic">// Works because &quot;bind&quot; changes &quot;this&quot; to point to person object (makes a copy of logName function)</span>
+<span style="color: #000080; font-weight: bold">var</span> logTheName = logName.bind(person);
+logTheName();
+                                        <br />
+<span style="color: #008800; font-style: italic">// Works because &quot;call&quot; changes &quot;this&quot; to point to person object</span>
+logName.call(person);
+                                        <br />
+<span style="color: #008800; font-style: italic">// Fails, again because &quot;this&quot; points to global object</span>
+<span style="color: #008800; font-style: italic">//logName.call();</span>
+                                        <br />
+<span style="color: #008800; font-style: italic">// Works because &quot;apply&quot; also changes &quot;this&quot; to point to person object</span>
+logName.apply(person);
+</pre>
+                                    </td>
+
+                            </table>
+                        </div>
+
+                        <br /><br />
+                        The call() and apply() methods can be used for <b>function borrowing</b> and the bind() method
+                        can be used for <b>function currying</b>.  Function borrowing lets one object us a function which belongs
+                        to another object.  Function currying creates a copy of the object but presets one or more of the parameters.
+                        <br /><br />
+
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// object #1 with a function</span>
+<span style="color: #000080; font-weight: bold">var</span> person = {
+	firstName: <span style="color: #0000FF">&#39;Kevin&#39;</span>,
+	lastName: <span style="color: #0000FF">&#39;Harris&#39;</span>,
+	fullName: <span style="color: #000080; font-weight: bold">function</span>() {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">this</span>.firstName + <span style="color: #0000FF">&#39; &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.lastName;
+	}
+}
+<br />
+<span style="color: #008800; font-style: italic">// object #2 does not have a function</span>
+<span style="color: #000080; font-weight: bold">var</span> person2 = {
+	firstName: <span style="color: #0000FF">&#39;Cathy&#39;</span>,
+	lastName: <span style="color: #0000FF">&#39;Harris&#39;</span>,
+	fullName: <span style="color: #000080; font-weight: bold">function</span>() {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">this</span>.firstName + <span style="color: #0000FF">&#39; &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.lastName;
+	}
+}
+                                        <br />
+<span style="color: #008800; font-style: italic">// Function borrowing - logs &quot;Cathy Harris&quot; </span>
+<span style="color: #008800; font-style: italic">// (Borrows function &quot;fullName&quot; from &quot;person1&quot;)</span>
+console.log(person.fullName.apply(person2));
+                                        <br />
+<span style="color: #008800; font-style: italic">// Function currying - copys function with a presets parameter</span>
+<span style="color: #000080; font-weight: bold">function</span> multiply(a, b) {
+                                        <span style="color: #000080; font-weight: bold">return</span> a * b;
+}
+<span style="color: #000080; font-weight: bold">var</span> multiplyByThree = multiply.bind(<span style="color: #000080; font-weight: bold">this</span>,<span style="color: #0000FF">3</span>);
+console.log(multiplyByThree(<span style="color: #0000FF">5</span>)); <span style="color: #008800; font-style: italic">// returns 15, a = 3, b = 5</span>
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+
+                    <li>
+                        <b>Functional Programming</b> - involves thinking and coding in terms of functions. It involves working in ways that
+                        are not possible in languages that do not have first-class functions.  It involves passing
+                        functions to functions, and returning functions from functions, to segment the work into finer details, and simplfy the coding.
+                        Note: It is better to not mutate data in the function chain, to instead create something new to return.  But if data
+                        must be mutated, it is better to do it at a higher function level that at the lower function levels.
+                        <br /><br />
+                        The following code segments the work of mutating the data into a function, which is then used as the data is copied into
+                        a new array.
+
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Use function inside push to mutate data before storeing</span>
+<span style="color: #000080; font-weight: bold">function</span> mapForEach(arr, fn) {
+                                        <span style="color: #000080; font-weight: bold">var</span> newArr = [];
+                                        <span style="color: #000080; font-weight: bold">for</span> (<span style="color: #000080; font-weight: bold">var</span> i=<span style="color: #0000FF">0</span>; i &lt; arr.length; i++) {
+		newArr.push(
+		fn(arr[i])
+		)
+	};
+                                        <span style="color: #000080; font-weight: bold">return</span> newArr;
+}
+<span style="color: #000080; font-weight: bold">var</span> arr1 = [<span style="color: #0000FF">1</span>, <span style="color: #0000FF">2</span>, <span style="color: #0000FF">3</span>];
+console.log(arr1);
+<span style="color: #008800; font-style: italic">//var arr2 = [];</span>
+<span style="color: #008800; font-style: italic">//for (var i=0; i&lt; arr1.length; i++) {</span>
+                                        <span style="color: #008800; font-style: italic">//arr2.push(arr1[i] * 2);</span>
+<span style="color: #008800; font-style: italic">//}</span>
+<br />
+<span style="color: #008800; font-style: italic">// Segment which mutates the data</span>
+<span style="color: #000080; font-weight: bold">var</span> arr2 = mapForEach(arr1, <span style="color: #000080; font-weight: bold">function</span>(item) {
+                                        <span style="color: #000080; font-weight: bold">return</span> item *<span style="color: #0000FF">2</span>;
+});
+console.log(arr2);
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <br /><br />
+                        The following code <b>curries a two parameter function down to one parameter</b> so the function can be
+                        used where a one parameter is needed.  The curry is performed using the bind() function to preset
+                        the first parameter to a fixed value.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Use function inside push to mutate data before storing</span>
+<span style="color: #000080; font-weight: bold">function</span> mapForEach(arr, fn) {
+                                        <span style="color: #000080; font-weight: bold">var</span> newArr = [];
+                                        <span style="color: #000080; font-weight: bold">for</span> (<span style="color: #000080; font-weight: bold">var</span> i=<span style="color: #0000FF">0</span>; i &lt; arr.length; i++) {
+		newArr.push(
+		fn(arr[i])
+		)
+	};
+                                        <span style="color: #000080; font-weight: bold">return</span> newArr;
+}
+<span style="color: #000080; font-weight: bold">var</span> arr1 = [<span style="color: #0000FF">1</span>, <span style="color: #0000FF">2</span>, <span style="color: #0000FF">3</span>];
+console.log(arr1);
+<br />
+<span style="color: #008800; font-style: italic">// Function with two parameters to check if value past limit</span>
+<span style="color: #000080; font-weight: bold">var</span> checkPastLimit = <span style="color: #000080; font-weight: bold">function</span>(limiter, item) {
+                                        <span style="color: #000080; font-weight: bold">return</span> item &gt; limiter;
+}
+<br />
+<span style="color: #008800; font-style: italic">// Use bind() to curry above function to match single parameter in mapForEach function</span>
+<span style="color: #000080; font-weight: bold">var</span> arr4 = mapForEach(arr1, checkPastLimit.bind(<span style="color: #000080; font-weight: bold">this</span>,<span style="color: #0000FF">1</span>));
+console.log(arr4);
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+
+                    </li>
+                    <li>
+                        <b>Open source JavaScript libraries</b> provide a wealth of good JavaScript coding examples.
+                        <br /><br />
+                        <ol>
+                            <li>
+                                <a href="http://underscorejs.org/" target="_blank">Underscore.js</a> - a JS utility library which makes frequent use
+                                of passing a predicate (a function which does work).  Includes an annotated version which
+                                helps understand the code.<br /><br />
+                            </li>
+                            <li>
+                                <a href="https://lodash.com/" target="_blank">lodash</a> - another JS utility library similar to Underscore.js (which was first).
+                                lodash was rewritten and some parts may be faster than Underscore.js.
+                            </li>
+                        </ol>
+                        <br />
+                        Below is an example of using utility functions from the <b>Underscore.js library</b>.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Requires Underscore.js library</span>
+<span style="color: #000080; font-weight: bold">var</span> arr1 = [<span style="color: #0000FF">1</span>, <span style="color: #0000FF">2</span>, <span style="color: #0000FF">3</span>];
+                                        <br />
+<span style="color: #008800; font-style: italic">// Use Underscore.js to map array</span>
+<span style="color: #000080; font-weight: bold">var</span> arr2 = _.map(arr1, <span style="color: #000080; font-weight: bold">function</span>(item) { <span style="color: #000080; font-weight: bold">return</span> item * <span style="color: #0000FF">5</span>});
+console.log(arr2);  <span style="color: #008800; font-style: italic">// returns 5, 10, 15</span>
+                                        <br />
+<span style="color: #008800; font-style: italic">// Use Underscore.js to return items divisible by zero</span>
+<span style="color: #000080; font-weight: bold">var</span> arr3 = _.filter([<span style="color: #0000FF">1</span>,<span style="color: #0000FF">2</span>,<span style="color: #0000FF">3</span>,<span style="color: #0000FF">4</span>,<span style="color: #0000FF">5</span>,<span style="color: #0000FF">6</span>], <span style="color: #000080; font-weight: bold">function</span>(item) {<span style="color: #000080; font-weight: bold">return</span> item % <span style="color: #0000FF">2</span> === <span style="color: #0000FF">0</span>;})
+console.log(arr3);  <span style="color: #008800; font-style: italic">// returns 2, 4, 6</span>
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+            </li>
+
+        </ol>
+
+
+
+        <ol start="3">
+            <li>
+                <h5>Object-Oriented JavaScript and Prototypal Inheritance</h5>
+                <ol type="a">
+
+                    <li>
+                        <b>Prototypal Inheritance</b> - JavaScript uses "prototypal inheritance" instead of "classical inheritance".  Classical inheritance
+                        is the best known type of inheritance used in languages such as C++, C#, Objective-C, Java, Smalltalk and PHP.  Prototypal
+                        inheritance is a simpler, more flexible, and easier to understand type of inheritance.
+                        <i>Note: Inheritance - one object gets access to the propertites and methods of another object.</i>
+                        <br /><br />
+                        All objects have a prototype property which is a reference to another property from which it
+                        can use its properties and methods.  Linking together objects through their prototype properties
+                        forms a "prototype chain" which can be traversed in the search for properties and methods.
+                        <br /><br />
+                        Scope Chain - where we have access to a variable.
+                        Prototye Chain - where we have access to properties and methods among a sequence of objects.
+                        <br /><br />
+                        The following code set the prototype of the kevin object to point to the person object.  So the kevin
+                        object inherits from the persons object ... allowing the kevin object to use the getFullName function
+                        which is defined on the person object.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">var</span> person = {
+    firstName: <span style="color: #0000FF">&#39;default&#39;</span>,
+    lastName: <span style="color: #0000FF">&#39;default&#39;</span>,
+    getFullName: <span style="color: #000080; font-weight: bold">function</span> () {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">this</span>.firstName + <span style="color: #0000FF">&#39; &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.lastName;
+    }
+}
+<span style="color: #000080; font-weight: bold">var</span> kevin = {
+    firstName: <span style="color: #0000FF">&#39;Kevin&#39;</span>,
+    lastName: <span style="color: #0000FF">&#39;Harris&#39;</span>
+}
+<br />
+<span style="color: #008800; font-style: italic">// Never use __proto__ in production (demo purposes only)</span>
+kevin.__proto__ = person;
+console.log(kevin.getFullName());
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                        <i>
+                            Note: In above code, the "this" variable refers to the object which called it (i.e. kevin)
+                            and does not refer to the person object.
+                        </i>
+                        <br /><br />
+                        <i>
+                            Note: Prototype-based languages encourage the alterations of prototypes during run-time. Only
+                            a few languages which use classical inheritance (i.e. with traditional classes) allow the
+                            classes to be altered at run time (those being: Perl, Python, Objective-C, Ruby, Lisp).
+                        </i>
+                        <br /><br />
+                        <i>
+                            Note: ECMA 6 introduces a new "class" keyword which allows the declaration of objects to resemble
+                            classical inheritance.  However it is only syntatic sugar ... it is still using prototypal
+                            inheritance under the hood.
+                        </i>
+                        <br /><br />
+                    </li>
+
+                    <li>
+                        <b>Everything in JavaScript is an object or primitive.</b>  All objects have a prototype property
+                        except for the base object (Object{}) which is at the bottom of the prototypal chain.  So every object
+                        (i.e. functions, arrays, etc.) have a prototype which provides a base set of methods and properties.
+                        For example an array has a "push" method which is defined on the array's prototype object ...
+                        and a function has an invocable "Code" property which is defined on the function's prototype object.
+                        All arrays, functions, etc have their prototype point to an automatic built-in object which provides
+                        these properties and methods.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%">1
+2
+3
+4
+5
+6
+7</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">var</span> a = {}
+<span style="color: #000080; font-weight: bold">var</span> b = <span style="color: #000080; font-weight: bold">function</span>() {};
+<span style="color: #000080; font-weight: bold">var</span> c = [];
+console.log(a.__proto__);  <span style="color: #008800; font-style: italic">// Object{} =&gt; the base object (toString, valueOf, ...)</span>
+console.log(b.__proto__);  <span style="color: #008800; font-style: italic">// function Empty () {} =&gt; (apply, arguments, bind, ...)</span>
+console.log(c.__proto__);  <span style="color: #008800; font-style: italic">// [] =&gt; (length, map, concat, ...)</span>
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+                    <li>
+                        <b>Reflection and Extend</b>
+                        <br /><br />
+                        <i>Reflection - an object can look at itself, listing and changing its properties and methods.</i>
+
+                        <br /><br />
+                        Reflection allows a useful pattern called <b>Extend</b> which is implemented in several common
+                        JavaScript libraries which allows a object to obtain the properties and methods from a list of
+                        other objects.  This is sort of a compliment to prototypal inheritance, but it is not built-in
+                        to JavaScript, but is support by many JS libraries.
+                        <br /><br />
+                        The following code uses reflection to obtain the object and methods on just the individual object
+                        (not including the prototype).
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">var</span> person = {
+    firstName: <span style="color: #0000FF">&#39;default&#39;</span>,
+    lastName: <span style="color: #0000FF">&#39;default&#39;</span>,
+    getFullName: <span style="color: #000080; font-weight: bold">function</span> () {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">this</span>.firstName + <span style="color: #0000FF">&#39; &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.lastName;
+    }
+}
+<span style="color: #000080; font-weight: bold">var</span> kevin = {
+    firstName: <span style="color: #0000FF">&#39;Kevin&#39;</span>,
+    lastName: <span style="color: #0000FF">&#39;Harris&#39;</span>
+}
+<br />
+<span style="color: #008800; font-style: italic">// Never use __proto__ in production (demo only)</span>
+kevin.__proto__ = person;
+                                        <br />
+<span style="color: #008800; font-style: italic">// Just get properties on kevin (not from prototype chain)</span>
+<span style="color: #000080; font-weight: bold">for</span> (<span style="color: #000080; font-weight: bold">var</span> prop <span style="color: #000080; font-weight: bold">in</span> kevin) {
+                                        <span style="color: #000080; font-weight: bold">if</span> (kevin.hasOwnProperty(prop)) {
+        console.log(prop + <span style="color: #0000FF">&#39; : &#39;</span> + kevin[prop]);
+    }
+}
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                        The following code uses the <b>"extend"</b> method from the Underscore.js library to combine
+                        all the methods and properties from the cathy and suzy object to the the kevin object.
+                        <br /><br />
+
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Example uses underscore.js library for extend function</span>
+<span style="color: #000080; font-weight: bold">var</span> person = {
+    firstName: <span style="color: #0000FF">&#39;default&#39;</span>,
+    lastName: <span style="color: #0000FF">&#39;default&#39;</span>,
+    getFullName: <span style="color: #000080; font-weight: bold">function</span> () {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">this</span>.firstName + <span style="color: #0000FF">&#39; &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.lastName;
+    }
+}
+<span style="color: #000080; font-weight: bold">var</span> kevin = {
+    firstName: <span style="color: #0000FF">&#39;Kevin&#39;</span>,
+    lastName: <span style="color: #0000FF">&#39;Harris&#39;</span>
+}
+                                        <br />
+<span style="color: #008800; font-style: italic">// Never use __proto__ in production (demo only)</span>
+kevin.__proto__ = person;
+<span style="color: #000080; font-weight: bold">var</span> cathy = {
+	address: <span style="color: #0000FF">&#39;101 Main St.&#39;</span>,
+	getFormalFullName: <span style="color: #000080; font-weight: bold">function</span> () {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">this</span>.lastName + <span style="color: #0000FF">&#39;, &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.firstName;
+	}
+}
+<span style="color: #000080; font-weight: bold">var</span> suzy = {
+	getFirstName: <span style="color: #000080; font-weight: bold">function</span>() {
+                                        <span style="color: #000080; font-weight: bold">return</span> firstName;
+	}
+}
+                                        <br />
+<span style="color: #008800; font-style: italic">// Combine properties and methods to first object</span>
+_.extend(kevin, cathy, suzy);
+                                        <br />
+<span style="color: #008800; font-style: italic">// Get properties on kevin ( and from prototype chain)</span>
+<span style="color: #000080; font-weight: bold">for</span> (<span style="color: #000080; font-weight: bold">var</span> prop <span style="color: #000080; font-weight: bold">in</span> kevin) {
+  console.log(prop + <span style="color: #0000FF">&#39; : &#39;</span> + kevin[prop]);
+}
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                        Note: ECMA 6 introduces the "extends" keyword which is not to be confused with the "extend" function
+                        found in many JavaScript libraries.  "extends" is part of ECMA 6's syntatic sugar for using the
+                        class syntax for setting inheritance (i.e. setting the prototype).
+                        <br /><br />
+                    </li>
+
+
+                    <li>
+                        <b>Building Objects</b> - there are a few different ways to build objects in JavaScript.
+                        And different ways to assign their prototype property as well. The ways have evolved and
+                        some of the older ways are used less often, but they continue to exist in legacy code.
+                        Note: that ECMA 6 is introducing a "class" keyword for use with creating objects, but
+                        that method is not covered here.
+                        <br /><br />
+
+                        <b>Function Constructors</b> - the "new" operator is the way many popular languages (such as Java) create objects.
+                        To create a similar syntax in JavaScript, the language designers created a way for functions to act
+                        as constructors to create objects.  With function constructors, the creation of objects has
+                        a familiar syntax to many developers, which is shown below.
+                        <br /><br />
+                        <b>Function Constructors</b> - a normal function that is used to construct objects.  The "this" variable
+                        points to a new empty object and the object is returned from the function automatically (as long as no
+                        "return" keyword is used in the function).
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td><pre style="margin: 0; line-height: 125%">1</pre></td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">var</span> kevin = <span style="color: #000080; font-weight: bold">new</span> person();
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                        One problem with function constructors is if you forget to use the "new" operator the object
+                        will be undefined.  A convention to help with this problem is to always capitalize the first letter
+                        of a function constructor, so that the programmer will able to more easily find this error.
+                        <br /><br />
+                        Using the "new"operator performs these steps:
+                        <ol>
+                            <li>Creates an empty object.</li>
+                            <li>
+                                Invokes the function. Note: when you use the "new" operator, it changes what the "this"
+                                variable points to ... it changes it to point to the new empty object.
+                            </li>
+                            <li>The variables preceded by the "this" keyword get added to the empty object which was just created.</li>
+                            <li>
+                                <b>
+                                    As long as the function constructor does not return a value
+                                </b> (i.e. does not use the "return" keyword),
+                                then the "new" operator will return the newly created object.  If the function construction does use
+                                the return keyword, then that associated value will be returned instead of the newly created object!
+                            </li>
+                        </ol>
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">function</span> Person(fn, ln) {
+                                        <span style="color: #000080; font-weight: bold">this</span>.firstName = fn;
+                                        <span style="color: #000080; font-weight: bold">this</span>.lastName = ln;
+}
+<span style="color: #000080; font-weight: bold">var</span> kevin = <span style="color: #000080; font-weight: bold">new</span> Person(<span style="color: #0000FF">&#39;Kevin&#39;</span>, <span style="color: #0000FF">&#39;Harris&#39;</span>);
+console.log(kevin);
+<span style="color: #000080; font-weight: bold">var</span> john = <span style="color: #000080; font-weight: bold">new</span> Person(<span style="color: #0000FF">&#39;John&#39;</span>, <span style="color: #0000FF">&#39;Doe&#39;</span>);
+console.log(john);
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />When an object is created with a Function Constructor, the <b>prototype</b> is
+                        automatically set to the new object.  After the object has been created, properties and methods
+                        can be added to the object by using the prototype property.  Typically the properties will be
+                        created with the object, then the methods will be added to the prototype.  This save memory by
+                        creating only once copy of the method in memory.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">function</span> Person(fn, ln) {
+                                        <span style="color: #000080; font-weight: bold">this</span>.firstName = fn;
+                                        <span style="color: #000080; font-weight: bold">this</span>.lastName = ln;
+}
+<br>
+<span style="color: #008800; font-style: italic">// Add function to the prototype</span>
+Person.prototype.getFullName = <span style="color: #000080; font-weight: bold">function</span> () {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">this</span>.firstName + <span style="color: #0000FF">&#39; &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.lastName;
+}
+<br />
+<span style="color: #000080; font-weight: bold">var</span> kevin = <span style="color: #000080; font-weight: bold">new</span> Person(<span style="color: #0000FF">&#39;Kevin&#39;</span>, <span style="color: #0000FF">&#39;Harris&#39;</span>);
+console.log(kevin);
+<br />
+<span style="color: #000080; font-weight: bold">var</span> john = <span style="color: #000080; font-weight: bold">new</span> Person(<span style="color: #0000FF">&#39;John&#39;</span>, <span style="color: #0000FF">&#39;Doe&#39;</span>);
+console.log(john);
+<br />
+console.log(kevin.getFullName());
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <br /><br />There are built-in function constructors -- <b>but using them is dangerous</b>.
+                        Do not use the built-in function constructors (e.g. String, Number) which create objects which box in the
+                        corresponding primitive types (string, number) ... unless absolutely necessary.  Using them
+                        causes confusion about wheather the values are primitives or objects.  If you do use these built-in
+                        constructors be sure to use the triple-equals (===) for comparison as the double-equals will coerce
+                        the data types and indicate an object of value 3 is equal to a primitive of value 3.
+                        <br /><br />
+
+                        <b>Object.create</b> - embraces the prototypal inheritance and does not try to mimic the way
+                        other languages create objects.  Function Constructors, and the new ECMAScript 6's class
+                        syntax, are syntatic sugar which mimic the syntax used in other popular languages for creating
+                        objects.  The other languages do not have prototypal inheritance, so using similar syntax
+                        in JavaScript can be a little awkward.  Some prefer to use the syntax which clearly focuses
+                        on the underlying prototype model by using Object.create.
+
+                        <br /><br />
+                        For prototypal inheritance, using <b>Object.create</b>, you
+                        simply create a base object (e.g. obj1) using "object literal syntax", then create new objects (e.g. obj2, obj3, ...) using the
+                        base object (obj1) as the new objects' prototype.  Then simply override the properties and methods on the new objects.  Typically
+                        the properties are created on the new objects, and the methods are created on the prototype.  Creating the methods on the prototype object
+                        save memory as the method is created only once, instead of multiple times as is would be if the method was created on the new objects.
+
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Object.create</span>
+<span style="color: #000080; font-weight: bold">var</span> person = {
+    firstName: <span style="color: #0000FF">&#39;default&#39;</span>,
+    lastName: <span style="color: #0000FF">&#39;default&#39;</span>,
+    greeting: <span style="color: #000080; font-weight: bold">function</span>() {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #0000FF">&#39;Hello &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.firstName + <span style="color: #0000FF">&#39; &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.lastName;
+    }
+}
+<span style="color: #000080; font-weight: bold">var</span> kevin = Object.create(person);
+kevin.firstName = <span style="color: #0000FF">&#39;Kevin&#39;</span>;
+kevin.lastName = <span style="color: #0000FF">&#39;Harris&#39;</span>;
+console.log(kevin);
+console.log(kevin.greeting());
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+
+                    <li>
+                        Methods and properties can be created during runtime on the prototype object using the "prototype" keyword.
+
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%">1
+2
+3
+4</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Add function to the prototype</span>
+Person.prototype.getFullName = <span style="color: #000080; font-weight: bold">function</span> () {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">this</span>.firstName + <span style="color: #0000FF">&#39; &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.lastName;
+}
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+
+                    <li>
+                        Object.create may not be supported by older browsers, in which case you can use
+                        Polyfill.
+                        <br /><br />
+                        <b>Polyfill</b> - code that adds a feature which the engine may lack.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// Polyfill for Object.create</span>
+<span style="color: #008800; font-style: italic">// For browsers which do not support Object.create</span>
+<span style="color: #000080; font-weight: bold">if</span> (!Object.create) {
+    Object.create = <span style="color: #000080; font-weight: bold">function</span> (o) {
+                                        <span style="color: #000080; font-weight: bold">if</span> (arguments.length &gt; <span style="color: #0000FF">1</span>){
+                                        <span style="color: #000080; font-weight: bold">throw</span> <span style="color: #000080; font-weight: bold">new</span> Error(<span style="color: #0000FF">&#39;Object.create requires &#39;</span>
+                           + <span style="color: #0000FF">&#39; one parameter.&#39;</span>);
+        }
+                                        <span style="color: #000080; font-weight: bold">function</span> F() {}
+        F.prototype = o;
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #000080; font-weight: bold">new</span> F();    
+    };
+}
+<br />
+<span style="color: #008800; font-style: italic">// Object.create</span>
+<span style="color: #000080; font-weight: bold">var</span> person = {
+    firstName: <span style="color: #0000FF">&#39;default&#39;</span>,
+    lastName: <span style="color: #0000FF">&#39;default&#39;</span>,
+    greeting: <span style="color: #000080; font-weight: bold">function</span>() {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #0000FF">&#39;Hello &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.firstName + <span style="color: #0000FF">&#39; &#39;</span> + <span style="color: #000080; font-weight: bold">this</span>.lastName;
+    }
+}
+<span style="color: #000080; font-weight: bold">var</span> kevin = Object.create(person);
+kevin.firstName = <span style="color: #0000FF">&#39;Kevin&#39;</span>;
+kevin.lastName = <span style="color: #0000FF">&#39;Harris&#39;</span>;
+console.log(kevin);
+console.log(kevin.greeting());
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br /><br />
+                    </li>
+                    <li>
+                        In ECMAScript 6 the <b>"class" keyword</b> is used to create objects.  In ES6, class creates an object just as you would with the object literal syntax.
+                        This is different from other languages where class is only the "blueprint" for creating an object.  In ES6 class actually create the object.
+                        This is another "syntactic sugar" technique to create objects using the "new" keyword.  Some people do not like these techniques and they never use
+                        the "new" keyword when creating objects.  However this new technique is better than Function Constructors as the compiler will alert you
+                        if you forget to use the "new" keyword, and does not just proceed with an undefined object.
+                        In ECMAScript 6 using "class" keyword, you use the <b>"extends" keyword</b> to set the object prototype.
+                        <br /><br />
+                        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29</pre>
+                                    </td>
+                                    <td>
+                                        <pre style="margin: 0; line-height: 125%"><span style="color: #008800; font-style: italic">// ECMAScript 6 Classes</span>
+<span style="color: #008800; font-style: italic">// In JS class is an object, not so in other languages.</span>
+<span style="color: #000080; font-weight: bold">class</span> Dog {
+    constructor(firstname, lastname) {
+                                        <span style="color: #000080; font-weight: bold">this</span>.firstname = firstname;
+                                        <span style="color: #000080; font-weight: bold">this</span>.lastname = lastname;
+    }
+    
+    greeting () {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #0000FF">&#39;Hello &#39;</span> + firstName + <span style="color: #0000FF">&#39; &#39;</span> + lastName;
+    }
+}
+<br />
+<span style="color: #000080; font-weight: bold">var</span> suzy = <span style="color: #000080; font-weight: bold">new</span> Dog(<span style="color: #0000FF">&#39;Suzy&#39;</span>, <span style="color: #0000FF">&#39;Harris&#39;</span>);
+<br />
+<span style="color: #008800; font-style: italic">// ES6 classes uses the extends keyword to set the prototype</span>
+<span style="color: #000080; font-weight: bold">class</span> LazyDog <span style="color: #000080; font-weight: bold">extends</span> Dog {
+    
+    constructor(firstname, lastname) {
+                                        <span style="color: #008800; font-style: italic">// super calls the constructor onthe base object</span>
+                                        <span style="color: #000080; font-weight: bold">super</span>(firstname,lastname);
+    }
+    
+    greeting () {
+                                        <span style="color: #000080; font-weight: bold">return</span> <span style="color: #0000FF">&#39;Move &#39;</span> + firstName + <span style="color: #0000FF">&#39; &#39;</span> + lastName;
+    }
+}
+</pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <br /><br />
+                    </li>
+                </ol>
+            </li>
+        </ol>
+
+        <!--        <ol start="3">
+                <li>
+                    <h5>Object-Oriented JavaScript and Prototypal Inheritance</h5>
+                    <ol type="a">
+
+                        <li>
+                            <b>Prototypal Inheritance</b>
+
+                            <br /><br />
+                        </li>
+
+                        <li><br /><br /></li>
+                        <li><br /><br /></li>
+                        <li><br /><br /></li>
+                    </ol>
+                </li>
+            </ol> -->
+
+
+
+
+        <h3>JS Quirks</h3>
+        <p>Below are aspects of JavaScript I find quirky.</p>
+
+        <ol>
+            <li>There are cases where JS fails arithmetic transitivity.</li>
+            <li>typeof(null); returns object (this is an accepted bug)</li>
+            <li>JS has a primitve data type called "undefined" which indicates a variable has been declared but not initialized.</li>
+            <li>JS has a number value called "NaN" (Not a Number) which is not equal to anything, including itself.</li>
+
+            <li>console.log(1 + 2 + "A"); equals 3A, while console.log("A" + 1 + 2) equals A12</li>
+            <li>console.log(100 + "25"); equals 10025.  While (1 == "1"); returns true;</li>
+            <li>typeof(a); returns number;</li>
+            <li>typeof an array; returns object; (which it really is, but can be misleading)</li>
+            <li>console.log(0/0); returns "NaN"; while console.log(typeof(0/0)); returns "number"</li>
+        </ol>
+
+
+        <br />
+        <br />
+
+        <h3>References</h3>
+        <ul>
+            <li><a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank">ECMAScript - Standard ECMA-262</a></li>
+            <li><a href="https://www.udemy.com/understand-javascript/" target="_blank">JavaScript: Understanding the Weird Parts - Anthony Alicea</a></li>
+            <li><a href="https://app.pluralsight.com/library/courses/js4cs/table-of-contents" target="_blank">JavaScript for C# Developers - Shawn Wildermuth (Pluralsight)</a></li>
+            <li><a href="http://www.crockford.com/" target="_blank">Douglas Crockford's Wrrrld Wide Web</a></li>
+            <li><a href="http://www.jslint.com/" target="_blank">JSLint</a></li>
+            <li><a href="https://app.pluralsight.com/library/search?q=douglas%20crockford" target="_blank">JavaScript the Good Parts - Douglas Crockford (Pluralsight)</a></li>
+            <li><a href="http://ejohn.org/" target="_blank">John Resig Home Page</a> (jQuery Author)</li>
+            <li><a href="https://www.manning.com/books/secrets-of-the-javascript-ninja-second-edition" target="_blank">Secrets of the JavaScript Ninja</a> (2nd Edition Aug. 2016) by John Resig (author of jQuery), Bear Bibeault, and Josip Maras.</li>
+            <li><a href="http://www.informit.com/store/effective-javascript-68-specific-ways-to-harness-the-9780321812186" target="_blank">Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript</a> by David Herman (2013, Pearson Education).</li>
+            <li><a href="https://leanpub.com/javascript-allonge" target="_blank">JavaScript Allongé (ES5)</a> by Reg Braithwaite.</li>
+            <!--<li><a href="" target="_blank"></a></li>-->
+        </ul>
+
+
+        <footer class="container">
+            <br />
+            <hr />
+            <p><em class="text-muted">This website was created by Kevin Harris in August 2016.</em></p>
+        </footer>
+    </section>
+</body>
+</html>

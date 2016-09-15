@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAJL+wo1GcUE24mc/zqzGnowAAAAACAAAAAAAQZgAAAAEAACAAAABgWrPe1wTqMU9LOQbF8x5v4eqKe/N85hL5+EwxSePlsgAAAAAOgAAAAAIAACAAAABbGlIPdW4Uv5zLVDMz6eBK0SCDtbsUnXC1kNT4588Z9RAAAAA5GbhGbgwd5CnLmmTgGQRAQAAAAKM+SqQcYjnGnaTBt2y3DVSa1U2tcTEkJuJgb2c7CZoaGZb47zssLpnXnHB5zKN8R7m1Xi9dRckIVM1FU184LQ8=</EncryptedPassword>
+    <_PublishTargetUrl>ftp://web803.discountasp.net:21/</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="About.aspx">
+      <publishTime>08/25/2016 14:46:22</publishTime>
+    </File>
+    <File Include="bin/CathyBootstrap.dll">
+      <publishTime>09/15/2016 10:50:57</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>08/20/2016 05:16:43</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>08/20/2016 05:16:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>08/20/2016 05:16:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>08/20/2016 05:16:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>08/20/2016 05:16:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>08/20/2016 05:16:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>08/20/2016 05:16:42</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>08/20/2016 05:16:43</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>08/20/2016 05:16:43</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>08/20/2016 05:16:43</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>08/20/2016 05:16:43</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>08/20/2016 05:16:43</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>08/20/2016 05:16:43</publishTime>
+    </File>
+    <File Include="Bootstrap-3.3.7/css/cerculean.bootstrap.min.css">
+      <publishTime>08/20/2016 08:10:35</publishTime>
+    </File>
+    <File Include="Bootstrap-3.3.7/js/bootstrap.js">
+      <publishTime>08/21/2016 19:31:32</publishTime>
+    </File>
+    <File Include="Bootstrap-3.3.7/js/bootstrap.min.js">
+      <publishTime>08/20/2016 05:28:14</publishTime>
+    </File>
+    <File Include="Bootstrap-3.3.7/js/jquery-3.1.0.js">
+      <publishTime>08/20/2016 10:23:57</publishTime>
+    </File>
+    <File Include="Bootstrap-3.3.7/js/jquery-3.1.0.min.js">
+      <publishTime>08/20/2016 05:30:22</publishTime>
+    </File>
+    <File Include="Bootstrap/bCollapse.aspx">
+      <publishTime>08/27/2016 12:43:16</publishTime>
+    </File>
+    <File Include="Bootstrap/bComponents.aspx">
+      <publishTime>08/27/2016 12:43:28</publishTime>
+    </File>
+    <File Include="Bootstrap/bComponents2.aspx">
+      <publishTime>08/27/2016 12:43:39</publishTime>
+    </File>
+    <File Include="Bootstrap/bEveryday.aspx">
+      <publishTime>08/27/2016 12:43:49</publishTime>
+    </File>
+    <File Include="Bootstrap/bText.aspx">
+      <publishTime>08/27/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Bootstrap/Template.aspx">
+      <publishTime>08/27/2016 12:44:05</publishTime>
+    </File>
+    <File Include="CathyBootstrap.Master">
+      <publishTime>09/13/2016 13:56:23</publishTime>
+    </File>
+    <File Include="Contact.aspx">
+      <publishTime>08/27/2016 12:44:13</publishTime>
+    </File>
+    <File Include="CSS/Site.css">
+      <publishTime>08/21/2016 16:34:10</publishTime>
+    </File>
+    <File Include="Design/Cube.aspx">
+      <publishTime>08/27/2016 12:44:21</publishTime>
+    </File>
+    <File Include="Design/Template.aspx">
+      <publishTime>08/27/2016 12:44:28</publishTime>
+    </File>
+    <File Include="Documents/Reference/ajax.pdf">
+      <publishTime>08/31/2016 04:23:14</publishTime>
+    </File>
+    <File Include="Documents/Reference/corecss2.pdf">
+      <publishTime>08/31/2016 04:23:43</publishTime>
+    </File>
+    <File Include="Documents/Reference/csharp.pdf">
+      <publishTime>08/31/2016 04:24:20</publishTime>
+    </File>
+    <File Include="Documents/Reference/css1.pdf">
+      <publishTime>08/31/2016 04:24:33</publishTime>
+    </File>
+    <File Include="Documents/Reference/css3.pdf">
+      <publishTime>08/31/2016 04:24:47</publishTime>
+    </File>
+    <File Include="Documents/Reference/html5-canvas.pdf">
+      <publishTime>08/31/2016 04:25:44</publishTime>
+    </File>
+    <File Include="Documents/Reference/html5_1.pdf">
+      <publishTime>08/31/2016 04:25:24</publishTime>
+    </File>
+    <File Include="Documents/Reference/html_1.pdf">
+      <publishTime>08/31/2016 04:25:05</publishTime>
+    </File>
+    <File Include="Documents/Reference/jquery.pdf">
+      <publishTime>08/31/2016 04:22:49</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/20/2016 05:16:41</publishTime>
+    </File>
+    <File Include="Home.aspx">
+      <publishTime>08/27/2016 12:44:37</publishTime>
+    </File>
+    <File Include="Images/allonge.PNG">
+      <publishTime>09/01/2016 05:50:41</publishTime>
+    </File>
+    <File Include="Images/cathy1.png">
+      <publishTime>08/21/2016 20:24:22</publishTime>
+    </File>
+    <File Include="Images/cathy2.png">
+      <publishTime>08/20/2016 07:50:00</publishTime>
+    </File>
+    <File Include="Images/cathyc1.png">
+      <publishTime>08/21/2016 20:50:08</publishTime>
+    </File>
+    <File Include="Images/cathyc2.png">
+      <publishTime>08/21/2016 20:49:48</publishTime>
+    </File>
+    <File Include="Images/cathyc3.png">
+      <publishTime>08/21/2016 20:49:29</publishTime>
+    </File>
+    <File Include="Images/cathyc4.png">
+      <publishTime>08/21/2016 20:49:04</publishTime>
+    </File>
+    <File Include="Images/effJS.PNG">
+      <publishTime>09/01/2016 05:18:33</publishTime>
+    </File>
+    <File Include="Images/jsn.PNG">
+      <publishTime>09/01/2016 05:20:06</publishTime>
+    </File>
+    <File Include="Images/suzyhl2.jpg">
+      <publishTime>08/25/2016 07:55:46</publishTime>
+    </File>
+    <File Include="JavaScript/EcmaScript6.aspx">
+      <publishTime>09/13/2016 15:11:08</publishTime>
+    </File>
+    <File Include="JavaScript/JavaScript.html">
+      <publishTime>09/15/2016 06:31:57</publishTime>
+    </File>
+    <File Include="Jquery/AjaxAjax.html">
+      <publishTime>09/13/2016 13:46:39</publishTime>
+    </File>
+    <File Include="Jquery/AjaxGet.html">
+      <publishTime>09/13/2016 13:46:39</publishTime>
+    </File>
+    <File Include="Jquery/AjaxLoad.html">
+      <publishTime>09/13/2016 13:46:39</publishTime>
+    </File>
+    <File Include="Jquery/AjaxPost.html">
+      <publishTime>09/13/2016 13:46:39</publishTime>
+    </File>
+    <File Include="Jquery/Basics.aspx">
+      <publishTime>09/13/2016 14:22:47</publishTime>
+    </File>
+    <File Include="Jquery/JavaScript.html">
+      <publishTime>09/12/2016 04:17:36</publishTime>
+    </File>
+    <File Include="Jquery/ProgResources.aspx">
+      <publishTime>08/25/2016 18:54:11</publishTime>
+    </File>
+    <File Include="Jquery/ProgResources.html">
+      <publishTime>09/13/2016 13:46:39</publishTime>
+    </File>
+    <File Include="Jquery/Template.aspx">
+      <publishTime>09/13/2016 13:46:39</publishTime>
+    </File>
+    <File Include="jQuery/test.aspx">
+      <publishTime>09/13/2016 14:36:49</publishTime>
+    </File>
+    <File Include="JS/Site.js">
+      <publishTime>08/21/2016 19:31:15</publishTime>
+    </File>
+    <File Include="Login.aspx">
+      <publishTime>08/25/2016 15:26:37</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/25/2016 15:25:56</publishTime>
+    </File>
+    <File Include="Secure/SecureHome.aspx">
+      <publishTime>09/03/2016 20:40:47</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/15/2016 10:52:20</publishTime>
+    </File>
+    <File Include="Web2.config">
+      <publishTime>08/22/2016 04:35:46</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax Ajax</title>
+    <meta charset="utf-8" />
+    <link href="../Bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Bootstrap-3.3.7/css/cerculean.bootstrap.min.css" rel="stylesheet" />
+    <script src="../Bootstrap-3.3.7/js/jquery-3.1.0.min.js"></script>
+    <script src="../Bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            WireEvents();
+        });
+
+        function WireEvents() {
+            $('#btnDiv1').click(function () {
+                $('#divOne').load('ProgResources.html #divPlaygrounds');
+            });
+
+            $('#btnDiv2').click(function () {
+                $('#divTwo').load('ProgResources.aspx', { PageSize: 5 });
+            });
+
+            $('#btnNotFound').click(function () {
+                $('#divTwo').load('NotFound.html',
+                    function (response, status, xhr) {
+                        if (status == "error") {
+                            alert('Error: ' + xhr.statusText);
+                        }
+                    });
+            });
+
+        }
+    </script>
+</head>
+<body>
+    <section id="body" class="container">
+        <div class="page-header" style="margin-top: 2em;">
+            <h3><em>Ajax Ajax</em></h3>
+            <p><em>Using jQuery to perform an Ajax Ajax ...</em></p>
+        </div>
+
+        <button id="btnDiv1">Div 1 - Playgrounds (from Static HTML)</button>
+
+        <div id="divOne">
+            <p>This is the first div.</p>
+        </div>
+
+        <br /><br />
+
+        <br />
+        <br />
+        <p>
+            jQuery <a href="http://api.jquery.com/jquery.ajax/" target="_blank">.ajax()</a>
+            is the heavyweight function which is used to communicate with the remote sight.
+            That is, the ajax() function performs the asynchronous HTTP (Ajax) request.
+            The load(), get(), and post() functions all rely on the ajax() function.
+
+            <br />
+            jQuery.ajax( url [, settings ] )<br />
+            url - A string containing the URL to which the request is sent.
+            settings - A set of key/value pairs that configure the Ajax request. All settings are optional.
+        </p>
+        <br />
+
+
+
+        <footer class="container">
+            <br />
+            <hr />
+            <p><em class="text-muted">This website was created by Kevin Harris in August 2016.</em></p>
+        </footer>
+    </section>
+</body>
+</html>

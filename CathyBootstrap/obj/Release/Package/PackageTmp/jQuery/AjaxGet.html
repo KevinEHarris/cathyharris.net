@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax Get</title>
+    <meta charset="utf-8" />
+    <link href="../Bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Bootstrap-3.3.7/css/cerculean.bootstrap.min.css" rel="stylesheet" />
+    <script src="../Bootstrap-3.3.7/js/jquery-3.1.0.min.js"></script>
+    <script src="../Bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            WireEvents();
+        });
+
+        function WireEvents() {
+            $('#btnDiv1').click(function () {
+                $('#divOne').load('ProgResources.html #divPlaygrounds');
+            });
+
+            $('#btnDiv2').click(function () {
+                $('#divTwo').load('ProgResources.aspx', { PageSize: 5 });
+            });
+
+            $('#btnNotFound').click(function () {
+                $('#divTwo').load('NotFound.html',
+                    function (response, status, xhr) {
+                        if (status == "error") {
+                            alert('Error: ' + xhr.statusText);
+                        }
+                    });
+            });
+
+        }
+    </script>
+</head>
+<body>
+    <section id="body" class="container">
+        <div class="page-header" style="margin-top: 2em;">
+            <h3><em>Ajax Get</em></h3>
+            <p><em>Using jQuery to perform an Ajax get ...</em></p>
+        </div>
+
+        <button id="btnDiv1">Div 1 - Playgrounds (from Static HTML)</button>
+
+        <div id="divOne">
+            <p>This is the first div.</p>
+        </div>
+
+        <br /><br />
+
+        <p>
+            While the .load() function provides an easy way to load HTML content from the server, but there
+            are times when you want to obtain JSON, XML, HTML, or simple strings. The .get() function provides
+            more flexibility by allowing the retrieval of these other types of data from the server.
+
+
+Also $getJSON is available for working with JSON data.
+
+        </p>
+
+        <p>
+            jQuery <a href="http://api.jquery.com/get/" target="_blank">.get()</a> is a global jQuery object 
+            (i.e. it has no selector) which is called directly.
+
+            <br />
+            .get( url [, data ] [, callback ] [, datatype ] )<br />
+            url - A string containing the URL to which the request is sent.
+            data - A plain object or string that is sent to the server with the request.
+            callback - A callback function that is executed when the request completes.
+            datatype - 
+        </p>
+
+        <footer class="container">
+            <br />
+            <hr />
+            <p><em class="text-muted">This website was created by Kevin Harris in August 2016.</em></p>
+        </footer>
+    </section>
+</body>
+</html>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax Post</title>
+    <meta charset="utf-8" />
+    <link href="../Bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Bootstrap-3.3.7/css/cerculean.bootstrap.min.css" rel="stylesheet" />
+    <script src="../Bootstrap-3.3.7/js/jquery-3.1.0.min.js"></script>
+    <script src="../Bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            WireEvents();
+        });
+
+        function WireEvents() {
+            $('#btnDiv1').click(function () {
+                $('#divOne').load('ProgResources.html #divPlaygrounds');
+            });
+
+            $('#btnDiv2').click(function () {
+                $('#divTwo').load('ProgResources.aspx', { PageSize: 5 });
+            });
+
+            $('#btnNotFound').click(function () {
+                $('#divTwo').load('NotFound.html',
+                    function (response, status, xhr) {
+                        if (status == "error") {
+                            alert('Error: ' + xhr.statusText);
+                        }
+                    });
+            });
+
+        }
+    </script>
+</head>
+<body>
+    <section id="body" class="container">
+        <div class="page-header" style="margin-top: 2em;">
+            <h3><em>Ajax Post</em></h3>
+            <p><em>Using jQuery to perform an Ajax post ...</em></p>
+        </div>
+
+        <button id="btnDiv1">Div 1 - Playgrounds (from Static HTML)</button>
+
+        <div id="divOne">
+            <p>This is the first div.</p>
+        </div>
+
+        <br /><br />
+
+        <br />
+        <br />
+
+        <p>
+            A <em>get</em> HTTP request is limited to the amount of data you can pass to the server.  With a get
+            request the data is placed on the URL. The maximum length of a URL is typically limited to 2048 characters.  If you need more data you can use a post request which places the returned data
+            in the message body of the response.
+
+            Post requests can send larger amount of data to the server as it is stored in the message body.  The larger amounts
+            of data may be from a form which is filled out on the web page and needs to sent to the server for
+            processing.
+            Post requests are a little more secure because the data being sent is not stored in browser history or in web server logs.
+
+
+            A fundamental difference between the post and get requests is that a post indicates that something will be changed on the server,
+            while a get request does not change the server state (i.e. get requests should be idempotent). This is why browsers will sometimes
+            prompt you when resubmitting a post request, as the server may be changed to a different state on the resubmit.  Also
+            post requests are not cached in the browser, while typically get requests will be cached in the browser.
+
+        </p>
+
+        <p>
+            jQuery <a href="http://api.jquery.com/post/" target="_blank">.post()</a> is used to
+            post data to a server and retrieve results. .post() can also be used to interact with
+            web services (e.g. WCF service).
+            The .post() function has a call signature which looks identical to the .get() call.
+
+            <br />
+            .post( url [, data ] [, complete ] )<br />
+            url - A string containing the URL to which the request is sent.
+            data - A plain object or string that is sent to the server with the request.
+            complete - A callback function that is executed when the request completes.
+        </p>
+        <br />
+
+
+        <footer class="container">
+            <br />
+            <hr />
+            <p><em class="text-muted">This website was created by Kevin Harris in August 2016.</em></p>
+        </footer>
+    </section>
+</body>
+</html>

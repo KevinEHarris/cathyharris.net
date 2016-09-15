@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax Load</title>
+    <meta charset="utf-8" />
+    <link href="../Bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Bootstrap-3.3.7/css/cerculean.bootstrap.min.css" rel="stylesheet" />
+    <script src="../Bootstrap-3.3.7/js/jquery-3.1.0.min.js"></script>
+    <script src="../Bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            WireEvents();
+        });
+
+        function WireEvents() {
+            $('#btnDiv1').click(function () {
+                $('#divOne').load('ProgResources.html #divPlaygrounds');
+            });
+
+            $('#btnDiv2').click(function () {
+                $('#divTwo').load('ProgResources.aspx', { PageSize: 5 });
+            });
+
+            $('#btnNotFound').click(function () {
+                $('#divTwo').load('NotFound.html',
+                    function (response, status, xhr) {
+                        if (status == "error") {
+                            alert('Error: ' + xhr.statusText);
+                        }
+                    });
+            });
+
+        }
+    </script>
+</head>
+<body>
+    <section id="body" class="container">
+        <div class="page-header" style="margin-top: 2em;">
+            <h3><em>Ajax Load</em></h3>
+            <p><em>Using jQuery to perform an Ajax load ...</em></p>
+        </div>
+
+        <button id="btnDiv1">Div 1 - Playgrounds (from Static HTML)</button>
+
+        <div id="divOne">
+            <p>This is the first div.</p>
+        </div>
+
+        <br /><br />
+        <button id="btnDiv2">Div 2 - Repository List (from Dynamic .aspx)</button>
+        <div id="divTwo">
+            <p>This is the second div.</p>
+        </div>
+
+        <br /><br />
+        <button id="btnNotFound">Not Found - URL is not found so errors</button>
+
+        <br />
+        <br />
+        <p>
+            jQuery <a href="http://api.jquery.com/load/" target="_blank">.load()</a> by default is a "get" which is cached.  If you pass in data (as the second parameter)
+            then it changes to a "post" which is not cached.<br />
+            .load( url [, data ] [, complete ] )<br />
+            url - A string containing the URL to which the request is sent.
+            data - A plain object or string that is sent to the server with the request.
+            complete - A callback function that is executed when the request completes.
+        </p>
+        <br />
+        <div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <table>
+                <tr>
+                    <td>
+                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre>
+                    </td>
+                    <td>
+                        <pre style="margin: 0; line-height: 125%">            <span style="color: #000080; font-weight: bold">&lt;script </span><span style="color: #FF0000">type=</span><span style="color: #0000FF">&quot;text/javascript&quot;</span><span style="color: #000080; font-weight: bold">&gt;</span>
+                $(document).ready(<span style="color: #000080; font-weight: bold">function</span> () {
+                    WireEvents();
+                });
+                        <span style="color: #000080; font-weight: bold">function</span> WireEvents() {
+                    $(<span style="color: #0000FF">&#39;#btnDiv1&#39;</span>).click(<span style="color: #000080; font-weight: bold">function</span> () {
+                        $(<span style="color: #0000FF">&#39;#divOne&#39;</span>).load(<span style="color: #0000FF">&#39;ProgResources.html #divPlaygrounds&#39;</span>);
+                    });
+                    $(<span style="color: #0000FF">&#39;#btnDiv2&#39;</span>).click(<span style="color: #000080; font-weight: bold">function</span> () {
+                        $(<span style="color: #0000FF">&#39;#divTwo&#39;</span>).load(<span style="color: #0000FF">&#39;ProgResources.aspx&#39;</span>, { PageSize: <span style="color: #0000FF">5</span> });
+                    });
+                }
+                        <span style="color: #000080; font-weight: bold">&lt;/script&gt;</span>
+</pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <table>
+                <tr>
+                    <td>
+                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
+                    </td>
+                    <td>
+                        <pre style="margin: 0; line-height: 125%"><span style="color: #000080; font-weight: bold">using</span> System;
+<span style="color: #000080; font-weight: bold">using</span> System.Collections.Generic;
+<span style="color: #000080; font-weight: bold">namespace</span> CathyBootstrap.Jquery
+{
+                        <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">partial</span> <span style="color: #000080; font-weight: bold">class</span> ProgResources : System.Web.UI.Page
+    {
+                        <span style="color: #000080; font-weight: bold">protected</span> <span style="color: #000080; font-weight: bold">void</span> Page_Load(<span style="color: #000080; font-weight: bold">object</span> sender, EventArgs e)
+        {
+                        <span style="color: #000080; font-weight: bold">var</span> pageSize = (Request[<span style="color: #0000FF">&quot;PageSize&quot;</span>] == <span style="color: #000080; font-weight: bold">null</span> ? <span style="color: #0000FF">50</span> : Int16.Parse(Request[<span style="color: #0000FF">&quot;PageSize&quot;</span>]));
+                        <span style="color: #000080; font-weight: bold">var</span> osrepos = <span style="color: #000080; font-weight: bold">new</span> List&lt;OSRepos&gt;();
+                        <span style="color: #000080; font-weight: bold">for</span> (<span style="color: #000080; font-weight: bold">int</span> i=<span style="color: #0000FF">0</span>; i &lt; pageSize; i++)
+            {
+                        <span style="color: #000080; font-weight: bold">var</span> osrepo = <span style="color: #000080; font-weight: bold">new</span> OSRepos
+                {
+                    Name = <span style="color: #0000FF">&quot;Repo&quot;</span> + i.ToString(),
+                    Location = <span style="color: #0000FF">&quot;Location&quot;</span> + i.ToString()
+                };
+                osrepos.Add(osrepo);
+            }
+            dlRepos.DataSource = osrepos;
+            dlRepos.DataBind();
+        }
+    }
+                        <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">class</span> OSRepos
+    {
+                        <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">string</span> Name { <span style="color: #000080; font-weight: bold">get</span>; <span style="color: #000080; font-weight: bold">set</span>; }
+                        <span style="color: #000080; font-weight: bold">public</span> <span style="color: #000080; font-weight: bold">string</span> Location { <span style="color: #000080; font-weight: bold">get</span>; <span style="color: #000080; font-weight: bold">set</span>; }
+    }
+}
+</pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!-- HTML generated using hilite.me --><div style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <table>
+                <tr>
+                    <td>
+                        <pre style="margin: 0; line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24</pre>
+                    </td>
+                    <td>
+                        <pre style="margin: 0; line-height: 125%">&lt;%<span style="color: #a61717; background-color: #e3d2d2">@</span> Page Language=<span style="color: #0000FF">&quot;C#&quot;</span> AutoEventWireup=<span style="color: #0000FF">&quot;true&quot;</span> CodeBehind=<span style="color: #0000FF">&quot;ProgResources.aspx.cs&quot;</span> Inherits=<span style="color: #0000FF">&quot;CathyBootstrap.Jquery.ProgResources&quot;</span> %&gt;
+&lt;body&gt;
+    &lt;asp:Label runat=<span style="color: #0000FF">&quot;server&quot;</span>&gt;Repositories:&lt;/asp:Label&gt;&lt;br /&gt;&lt;br /&gt;
+    &lt;asp:DataList ID=<span style="color: #0000FF">&quot;dlRepos&quot;</span> runat=<span style="color: #0000FF">&quot;server&quot;</span>&gt;
+        &lt;HeaderTemplate&gt;
+            &lt;table style=<span style="color: #0000FF">&quot;width: 400px&quot;</span>&gt;
+                &lt;tr style=<span style="color: #0000FF">&quot;background-color: #eeeeee&quot;</span>&gt;
+                    &lt;td&gt;Name&lt;/td&gt;
+                    &lt;td&gt;Location&lt;/td&gt;
+                &lt;/tr&gt;
+        &lt;/HeaderTemplate&gt;
+        &lt;ItemTemplate&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;%<span style="color: #a61717; background-color: #e3d2d2">#</span> Eval(<span style="color: #0000FF">&quot;Name&quot;</span>) %&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;%<span style="color: #a61717; background-color: #e3d2d2">#</span> Eval(<span style="color: #0000FF">&quot;Location&quot;</span>) %&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/ItemTemplate&gt;
+        &lt;FooterTemplate&gt;
+            &lt;/table&gt;
+        &lt;/FooterTemplate&gt;
+    &lt;/asp:DataList&gt;
+&lt;/body&gt;
+</pre>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+
+
+        <footer class="container">
+            <br />
+            <hr />
+            <p><em class="text-muted">This website was created by Kevin Harris in August 2016.</em></p>
+        </footer>
+    </section>
+</body>
+</html>

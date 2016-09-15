@@ -1,0 +1,214 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CathyBootstrap.master.cs" Inherits="CathyBootstrap.CathyBootstrap"
+    ClientIDMode="Static" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Cathy's Website</title>
+
+    <!-- Use Unicode character encoding -->
+    <meta charset="utf-8" />
+    <!-- Tell IE to display content in highest HTML 5 mode available -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell mobile browsers to use the device width when rendering -->
+    <meta name="viewport" content="width=device-wide, initial-scale=1.0" />
+
+    <!-- Bootstrap -->
+    <link href="Bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Bootstrap-3.3.7/css/cerculean.bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom Styles -->
+    <link href="CSS/Site.css" rel="stylesheet" />
+    <style>
+        .dropdown-submenu {
+            position: relative;
+        }
+
+            .dropdown-submenu > .dropdown-menu {
+                top: 0;
+                left: 100%;
+                margin-top: -6px;
+                margin-left: -1px;
+            }
+
+            .dropdown-submenu:hover > .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown-submenu:hover > a:after {
+                border-left-color: #fff;
+            }
+
+            .dropdown-submenu.pull-left {
+                float: none;
+            }
+
+                .dropdown-submenu.pull-left > .dropdown-menu {
+                    left: -100%;
+                    margin-left: 10px;
+                }
+    </style>
+    <!-- jQuery -->
+    <script src="<%= ResolveUrl("~") %>Bootstrap-3.3.7/js/jquery-3.1.0.js"></script>
+
+    <!-- Normal Bootstrap plugins -->
+    <script src="<%= ResolveUrl("~") %>Bootstrap-3.3.7/js/bootstrap.js"></script>
+
+    <!-- Site JavaScript -->
+    <script src="<%= ResolveUrl("~") %>JS/Site.js"></script>
+
+    <script type="text/javascript">
+        //window.onload = function () {
+        //    if (window.jQuery) {
+        //        alert("jQuery is loaded");
+        //    } else {
+        //        alert("jQuery is not loaded");
+        //    }
+        //}
+        //debugger;
+        function getPageName(url) {
+            var index = url.lastIndexOf("/") + 1;
+            var filename = url.substr(index);
+            return filename;
+        }
+
+        $(document).ready(function () {
+            // Set the 'active' class on current menu item's <li>
+            $("a[href='" + getPageName(window.location.pathname) + "']").parent().addClass("active");
+
+            $(".dropdown-menu > li > a").click(function () {
+                x = $(this).attr("href");
+                if (x == "#") { return false; }
+            });
+        });
+
+    </script>
+
+    <%--1. Head Content Place Holder--%>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="body" runat="server">
+    <form runat="server">
+        <div id="page">
+            <!-- ********************************** -->
+            <!-- Header Navigation Area             -->
+            <!-- ********************************** -->
+            <header class="container">
+                <div class="row" style="margin-top: 5px; margin-bottom: 10px">
+                    <div class="col-xs-12">
+                        <nav class="navbar navbar-default">
+                            <div class="container-fluid">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                        data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" style="margin-top: -0.4em;" href="Home.aspx"><em><small>Cathy's<br />
+                                        Website</small></em></a>
+                                </div>
+                                <!-- Collapsable Navbar  -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                                    <ul class="nav navbar-nav">
+                                        <!--Add about 40 px top-margin to body when using navbar-fixed-top-->
+                                        <li id="home" runat="server"><a href="/Home.aspx">Home<span class="sr-only">(current)</span></a></li>
+                                        <%--Submenu Kevin--%>
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Kevin <span class="caret"></span></a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <%--Bootstrap--%>
+                                                <li class="dropdown-submenu">
+                                                    <a tabindex="-1" href="#">Bootstrap<i class="fa fa-chevron-right"></i></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li id="Bootstrap" runat="server"><a tabindex="-1" href="/Bootstrap/bComponents.aspx">Components 1</a></li>
+                                                        <li id="Bootstrap2" runat="server"><a tabindex="-1" href="/Bootstrap/bComponents2.aspx">Components 2</a></li>
+                                                        <li id="Bootstrap3" runat="server"><a tabindex="-1" href="/Bootstrap/bCollapse.aspx">Collapse</a></li>
+                                                        <li id="Bootstrap4" runat="server"><a tabindex="-1" href="/Bootstrap/bEveryday.aspx">Everyday</a></li>
+                                                        <li id="Bootstrap5" runat="server"><a tabindex="-1" href="/Bootstrap/bText.aspx">Text</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <%--JavaScript--%>
+                                                <li class="dropdown-submenu">
+                                                    <a tabindex="-1" href="#">JavaScript<i class="fa fa-chevron-right"></i></a>
+                                                    <ul class="dropdown-menu">                                                        
+                                                        <li id="JavaScript" runat="server"><a tabindex="-1" href="/JavaScript/JavaScript.html">JavaScript</a></li>
+                                                        <li id="JavaScript2" runat="server"><a tabindex="-1" href="/JavaScript/EcmaScript6.aspx">ECMAScript 6</a></li>
+                                                    </ul>
+                                                </li>
+
+                                                <%--jQuery--%>
+                                                <li class="dropdown-submenu">
+                                                    <a tabindex="-1" href="#">jQuery<i class="fa fa-chevron-right"></i></a>
+                                                    <ul class="dropdown-menu">                                                        
+                                                        <li id="jQuery" runat="server"><a tabindex="-1" href="/jQuery/Basics.aspx">jQuery Basics</a></li>
+                                                        <li id="jQuery2" runat="server"><a tabindex="-1" href="/jQuery/AjaxLoad.html">Ajax load()</a></li>
+                                                        <li id="jQuery3" runat="server"><a tabindex="-1" href="/jQuery/AjaxGet.html">Ajax get()</a></li>
+                                                        <li id="jQuery4" runat="server"><a tabindex="-1" href="/jQuery/AjaxPost.html">Ajax post()</a></li>
+                                                        <li id="jQuery5" runat="server"><a tabindex="-1" href="/jQuery/AjaxAjax.html">Ajax ajax()</a></li>
+                                                    </ul>
+                                                </li>
+
+
+                                                <%--Design--%>
+                                                <li class="dropdown-submenu">
+                                                    <a tabindex="-1" href="#">Projects<i class="fa fa-chevron-right"></i></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li id="Cube" runat="server"><a tabindex="-1" href="/Design/Cube.aspx">Cube</a></li>
+                                                    </ul>
+                                                </li>
+
+
+                                            </ul>
+                                        </li>
+                                        <!-- .dropdown -->
+
+                                        <li id="contact" runat="server"><a href="/Contact.aspx">Contact</a></li>
+                                        <li id="about" runat="server"><a href="/About.aspx">About</a></li>
+
+                                    </ul>
+                                    <div class="navbar-form navbar-right">
+                                        <div class="form-group" style="margin-right: 10em;">
+                                            <input type="text" class="form-control input-sm" placeholder="Enter search text" />
+                                            <%--<button type="submit" class="btn btn-default btn-success btn-sm navbar-btn">Submit</button>--%>
+                                            <asp:Button ID="btnSearch" runat="server"
+                                                Text="Search"
+                                                CssClass="btn btn-success btn-sm nav-btn navbar-btn"
+                                                title="Submit a search"
+                                                OnClick="btnSearch_Click" />
+
+                                        </div>
+                                        <%--<button type="submit" class="btn btn-default btn-success btn-sm">Login</button>--%>
+                                        <%--                                        <asp:Button ID="btnLogin" runat="server"
+                                            Text="Login"
+                                            CssClass="btn btn-success btn-sm navbar-btn"
+                                            title="Login to secure area."
+                                            OnClick="btnLogin_Click" />--%>
+                                        <a class="btn btn-success btn-sm navbar-btn" href="/Login.aspx">Login</a>
+                                    </div>
+
+                                </div>
+                                <!-- /.navbar-collapse -->
+                            </div>
+                            <!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <div>
+                <%-- 2. Main Content Place Holder--%>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+
+        <%--3. End of Page Content Place Holder (Additional JS)--%>
+        <asp:ContentPlaceHolder ID="EndOfPageContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
